@@ -26,7 +26,7 @@ Texto sugerido para la tarjeta:
 - **Imagen:** `https://buenosairesfront.github.io/supercollider/og.png` (1200 × 630)
 - **Ícono:** `https://buenosairesfront.github.io/supercollider/icons/icon-512.png`
 
-**Probar ↗** abre la app (sin `?lang=` usa el idioma del navegador del visitante). **Código** abre este repositorio. Para enlazar un idioma concreto:
+**Probar ↗** abre la app (sin `?lang=` abre en castellano). **Código** abre este repositorio. Para enlazar un idioma concreto:
 
 ```
 https://buenosairesfront.github.io/supercollider/?lang=es

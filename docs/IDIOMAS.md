@@ -13,8 +13,7 @@
 
 1. Parámetro de URL `?lang=xx` (también queda guardado).
 2. Lo último elegido en ⚙ → Idioma (`localStorage`, clave `sclab.v1`).
-3. Idioma del navegador, si es uno de los seis.
-4. Español.
+3. Si no hay ninguno de los dos: español (castellano), siempre.
 
 Sólo se descarga el archivo del idioma activo (más español e inglés como respaldo).
 

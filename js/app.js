@@ -42,8 +42,7 @@ function pickLang() {
   const q = new URLSearchParams(location.search).get('lang');
   if (q && LANGS.includes(q)) { P.lang = q; save(); return q; }
   if (P.lang && LANGS.includes(P.lang)) return P.lang;
-  const nav = (navigator.languages || [navigator.language || 'es']).map(x => String(x).slice(0, 2).toLowerCase());
-  return nav.find(x => LANGS.includes(x)) || 'es';
+  return 'es';
 }
 const TX = () => (G.SC_LANG && G.SC_LANG[lang]) || {};
 const FB = () => (G.SC_LANG && (G.SC_LANG.en || G.SC_LANG.es)) || {};

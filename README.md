@@ -50,7 +50,7 @@ Detalles en [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md) y lo que entiende el 
 
 ## Idiomas
 
-La app detecta el idioma del navegador; también se elige desde ⚙ o con la URL:
+La app arranca en castellano; el idioma se cambia desde ⚙ o con la URL:
 
 | Idioma | Enlace |
 |---|---|
