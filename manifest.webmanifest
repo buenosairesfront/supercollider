@@ -1,0 +1,15 @@
+{
+  "name": "SuperCollider Lab · U-MA",
+  "short_name": "SC Lab",
+  "description": "Learn SuperCollider in your browser: lessons, labs and live coding with a real-time synthesis engine.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#C8C9C5",
+  "theme_color": "#121314",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
