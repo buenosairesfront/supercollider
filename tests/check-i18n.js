@@ -20,12 +20,10 @@ for (const l of langs) {
     if (!T.quiz || T.quiz.o.length !== 4 || !T.quiz.q || !T.quiz.e) bad(l, les.id + '.quiz');
     if (!T.ch || !T.ch.task || !T.ch.hint || (T.ch.checks || []).length !== les.challenge.checks.length) bad(l, les.id + '.ch checks ' + (T.ch && T.ch.checks || []).length + ' vs ' + les.challenge.checks.length);
   }
-  if (l !== 'en') for (const k of Object.keys(C.quotes)) if (!L.quotes[k]) bad(l, 'quotes.' + k);
   if ((L.tips || []).length !== C.tips.length) bad(l, 'tips ' + (L.tips || []).length);
   (L.tips || []).forEach((t, i) => { if (!t.t || !t.b) bad(l, 'tip ' + i); });
   for (const k of Object.values(C.ref).flat()) if (!L.ref[k]) bad(l, 'ref.' + k);
   for (const k of Object.keys(base.labs)) if (!L.labs[k] || !L.labs[k].t || !L.labs[k].d || !L.labs[k].tip) bad(l, 'labs.' + k);
-  if (!L.book || !L.book.about || (L.book.disclaimer || []).length !== base.book.disclaimer.length || (L.book.how || []).length !== base.book.how.length) bad(l, 'book');
 }
 console.log(problems ? problems + ' problems' : 'all languages complete');
 process.exit(problems ? 1 : 0);

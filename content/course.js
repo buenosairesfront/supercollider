@@ -1,13 +1,13 @@
-/* SuperCollider Lab · U-MA — course structure (language-neutral: code, checks, links to the book).
+/* SuperCollider Lab · U-MA — course structure (language-neutral: code and checks).
  * Texts live in content/<lang>.js. Every code cell is tested headless by tests/run-tests.js.
  */
 window.SC_COURSE = (function () {
-const M = (id, color, ch, lessons) => ({ id, color, ch, lessons });
+const M = (id, color, lessons) => ({ id, color, lessons });
 const L = (id, o) => Object.assign({ id }, o);
 
 const modules = [
-M('m1', 'mag', [1, 5, 9], [
-  L('l01', { min: 8, ch: [1, 9], quote: 'intro',
+M('m1', 'mag', [
+  L('l01', { min: 8,
     cells: {
       c1: '"Hello world".postln;',
       c2: 's.boot;',
@@ -17,7 +17,7 @@ M('m1', 'mag', [1, 5, 9], [
     quiz: { answer: 1 },
     challenge: { starter: '// A sine wave at 220 Hz, amplitude 0.1\n', checks: [{ ugen: 'SinOsc' }, { code: /220/ }, { sound: true }] },
   }),
-  L('l02', { min: 10, ch: [1], quote: 'cottle_goal',
+  L('l02', { min: 10,
     cells: {
       c1: 'rrand(1, 100);\n100.rand;\nexprand(1.0, 100.0).round(0.01);',
       c2: '{ exprand(1.0, 100.0).round(0.01) } ! 10;',
@@ -28,7 +28,7 @@ M('m1', 'mag', [1, 5, 9], [
     quiz: { answer: 2 },
     challenge: { starter: '// 8 random MIDI notes between 48 and 72, sorted\n', checks: [{ value: v => Array.isArray(v) && v.length === 8 }, { value: v => Array.isArray(v) && v.every(x => +x >= 48 && +x <= 72) }, { value: v => Array.isArray(v) && v.every((x, i) => !i || +v[i - 1] <= +x) }] },
   }),
-  L('l03', { min: 12, ch: [1, 5], quote: 'cottle_panic',
+  L('l03', { min: 12,
     cells: {
       c1: '1 + 2 * 3;      // left to right: 9\n1 + (2 * 3);    // 7',
       c2: '(\nvar f = { |a, b = 2| a * b };\nf.value(5).postln;   // 10\nf.(5, 3);            // 15\n)',
@@ -38,7 +38,7 @@ M('m1', 'mag', [1, 5, 9], [
     quiz: { answer: 3 },
     challenge: { starter: '// Write ~mtof: a function that turns a MIDI note into Hz\n~mtof = { |note|  };\n~mtof.(69);', checks: [{ fn: c => { try { return Math.abs(+c.I.interpret('~mtof.(69)') - 440) < 0.01; } catch (e) { return false; } } }, { fn: c => { try { return Math.abs(+c.I.interpret('~mtof.(81)') - 880) < 0.01; } catch (e) { return false; } } }] },
   }),
-  L('l04', { min: 12, ch: [1, 5],
+  L('l04', { min: 12,
     cells: {
       c1: 'a = [0, 2, 4, 5, 7, 9, 11] + 60;\na.midicps.round(0.1);',
       c2: '(1..8).collect { |i| i * 110 };',
@@ -50,8 +50,8 @@ M('m1', 'mag', [1, 5, 9], [
     challenge: { starter: '// The first 5 harmonics of 110 Hz as an array\n', checks: [{ value: v => Array.isArray(v) && v.length === 5 }, { value: v => Array.isArray(v) && v.map(Number).join() === '110,220,330,440,550' }] },
   }),
 ]),
-M('m2', 'cya', [1, 2], [
-  L('l05', { min: 10, ch: [1, 2], quote: 'parmenter_ugen',
+M('m2', 'cya', [
+  L('l05', { min: 10,
     cells: {
       c1: '{ SinOsc.ar(440, 0, 0.2) }.play;',
       c2: 'x = { SinOsc.ar(220, 0, 0.2) }.play;',
@@ -63,7 +63,7 @@ M('m2', 'cya', [1, 2], [
     quiz: { answer: 1 },
     challenge: { starter: '// A 330 Hz sine with amplitude 0.15 (use keywords if you like)\n', checks: [{ ugen: 'SinOsc' }, { code: /330/ }, { sound: true }] },
   }),
-  L('l06', { min: 12, ch: [1, 2],
+  L('l06', { min: 12,
     cells: {
       c1: '{ Saw.ar(110, 0.15) }.play;',
       c2: '{ Pulse.ar(110, 0.2, 0.15) }.play;',
@@ -74,7 +74,7 @@ M('m2', 'cya', [1, 2], [
     quiz: { answer: 2 },
     challenge: { starter: '// A Blip with 12 harmonics, at 0.2 amplitude\n', checks: [{ ugen: 'Blip' }, { code: /12/ }, { sound: true }] },
   }),
-  L('l07', { min: 14, ch: [1, 2],
+  L('l07', { min: 14,
     cells: {
       c1: '// vibrato: an LFO controls the frequency\n{ SinOsc.ar(SinOsc.kr(5, 0, 10, 440), 0, 0.2) }.play;',
       c2: '{ SinOsc.ar(LFNoise0.kr(8).range(200, 1000), 0, 0.2) }.play;',
@@ -85,7 +85,7 @@ M('m2', 'cya', [1, 2], [
     quiz: { answer: 0 },
     challenge: { starter: '// A siren: LFTri moves a SinOsc between 300 and 900 Hz\n', checks: [{ ugen: 'LFTri' }, { ugen: 'SinOsc' }, { sound: true }] },
   }),
-  L('l08', { min: 15, ch: [1, 2],
+  L('l08', { min: 15,
     cells: {
       c1: '// VCO -> VCF -> VCA\n{ RLPF.ar(Saw.ar(110, 0.3), MouseX.kr(100, 5000, 1), 0.2) }.play;',
       c2: '{ RLPF.ar(Saw.ar([100, 101], 0.2), LFNoise1.kr(2).range(300, 3000), 0.1) }.play;',
@@ -95,7 +95,7 @@ M('m2', 'cya', [1, 2], [
     quiz: { answer: 1 },
     challenge: { starter: '// Pulse -> RLPF, with an LFO moving the cutoff\n', checks: [{ ugen: 'Pulse' }, { ugen: 'RLPF' }, { anyUgen: ['SinOsc', 'LFNoise0', 'LFNoise1', 'LFNoise2', 'LFTri', 'LFSaw', 'LFPulse'] }, { sound: true }] },
   }),
-  L('l09', { min: 16, ch: [1, 2],
+  L('l09', { min: 16,
     cells: {
       c1: 'Env.perc(0.01, 1).plot;\nEnv.adsr(0.1, 0.3, 0.5, 1).plot;',
       c2: 'Env([0, 1, 0.3, 0], [0.05, 0.3, 1], [-4, -2, -4]).plot;',
@@ -107,7 +107,7 @@ M('m2', 'cya', [1, 2], [
     quiz: { answer: 2 },
     challenge: { starter: '// A percussive note that frees itself (Env.perc + doneAction: 2)\n', checks: [{ ugen: 'EnvGen' }, { code: /doneAction\s*:\s*2|Done\.freeSelf/ }, { sound: true }] },
   }),
-  L('l10', { min: 14, ch: [1], quote: 'cottle_magic',
+  L('l10', { min: 14,
     cells: {
       c1: '{ SinOsc.ar(440, 0, 0.2) }.play;          // mono: left only\n{ SinOsc.ar([440, 443], 0, 0.2) }.play;   // stereo',
       c2: '{ Blip.ar(100, LFNoise0.kr([5, 10], 12, 14), 0.2) }.play;',
@@ -119,8 +119,8 @@ M('m2', 'cya', [1, 2], [
     challenge: { starter: '// Three detuned Saw oscillators, spread in stereo with Splay\n', checks: [{ ugen: 'Saw' }, { ugen: 'Pan2' }, { channels: 2 }, { sound: true }] },
   }),
 ]),
-M('m3', 'yel', [1, 2, 16, 19], [
-  L('l11', { min: 15, ch: [1],
+M('m3', 'yel', [
+  L('l11', { min: 15,
     cells: {
       c1: '// harmonics 1..12 with amplitude 1/n: a saw-like tone\n{ Mix.fill(12, { |i| SinOsc.ar(110 * (i + 1), 0, 0.3 / (i + 1)) }) ! 2 }.play;',
       c2: '// only odd harmonics: square-like\n{ Mix.fill(8, { |i| var n = i * 2 + 1; SinOsc.ar(110 * n, 0, 0.3 / n) }) ! 2 }.play;',
@@ -130,7 +130,7 @@ M('m3', 'yel', [1, 2, 16, 19], [
     quiz: { answer: 3 },
     challenge: { starter: '// Build a square-ish wave from odd harmonics with Mix.fill\n', checks: [{ ugen: 'SinOsc' }, { code: /Mix\.fill|Mix\(|Klang/ }, { sound: true }] },
   }),
-  L('l12', { min: 16, ch: [1],
+  L('l12', { min: 16,
     cells: {
       c1: '// modulation index on the mouse: watch the sidebands in SPECTRUM\n{ PMOsc.ar(400, 400 * 1.4, MouseX.kr(0, 10)) * 0.2 ! 2 }.play;',
       c2: '{\n  var mod = SinOsc.ar(200, 0, MouseX.kr(0, 2000));\n  SinOsc.ar(400 + mod, 0, 0.2) ! 2\n}.play;',
@@ -140,7 +140,7 @@ M('m3', 'yel', [1, 2, 16, 19], [
     quiz: { answer: 0 },
     challenge: { starter: '// An FM bell: PMOsc with an envelope on the index\n', checks: [{ ugen: 'SinOsc' }, { code: /PMOsc/ }, { ugen: 'EnvGen' }, { sound: true }] },
   }),
-  L('l13', { min: 15, ch: [1],
+  L('l13', { min: 15,
     cells: {
       c1: '{ Pluck.ar(WhiteNoise.ar(0.3), Impulse.kr(2), 0.01, 220.reciprocal, 4, 0.3) ! 2 }.play;',
       c2: '(\n{\n  var trig = Impulse.kr(6);\n  var note = Demand.kr(trig, 0, Dseq([57, 60, 64, 67, 69, 67, 64, 60], inf));\n  Pluck.ar(WhiteNoise.ar(0.3), trig, 0.02, note.midicps.reciprocal, 2, 0.4) ! 2\n}.play;\n)',
@@ -150,7 +150,7 @@ M('m3', 'yel', [1, 2, 16, 19], [
     quiz: { answer: 2 },
     challenge: { starter: '// A resonant body (Klank) excited by Dust\n', checks: [{ code: /Klank|Ringz/ }, { ugen: 'Dust' }, { sound: true }] },
   }),
-  L('l14', { min: 16, ch: [1, 2],
+  L('l14', { min: 16,
     cells: {
       c1: '(\n{\n  var s = Decay2.ar(Impulse.ar(1), 0.01, 0.2) * SinOsc.ar(800, 0, 0.3);\n  s + CombN.ar(s, 0.5, 0.25, 3) ! 2\n}.play;\n)',
       c2: '{ FreeVerb.ar(Decay2.ar(Dust.ar(2), 0.01, 0.3) * Saw.ar(300, 0.3), 0.6, 0.9) ! 2 }.play;',
@@ -160,7 +160,7 @@ M('m3', 'yel', [1, 2, 16, 19], [
     quiz: { answer: 1 },
     challenge: { starter: '// A dry sound + an echo (CombN) + reverb (FreeVerb)\n', checks: [{ ugen: 'CombN' }, { ugen: 'FreeVerb' }, { sound: true }] },
   }),
-  L('l15', { min: 16, ch: [16], quote: 'micro',
+  L('l15', { min: 16,
     cells: {
       c1: '{ GrainSin.ar(2, Impulse.kr(20), 0.05, 440) * 0.3 }.play;',
       c2: '// density on X, grain size on Y\n{ GrainSin.ar(2, Dust.kr(MouseX.kr(5, 200, 1)), MouseY.kr(0.005, 0.2, 1), LFNoise1.kr(0.3).exprange(200, 2000), LFNoise1.kr(2)) * 0.2 }.play;',
@@ -170,7 +170,7 @@ M('m3', 'yel', [1, 2, 16, 19], [
     quiz: { answer: 3 },
     challenge: { starter: '// A grain cloud: GrainSin triggered by Dust\n', checks: [{ ugen: 'GrainSin' }, { ugen: 'Dust' }, { sound: true }] },
   }),
-  L('l16', { min: 14, ch: [19], quote: 'stoch',
+  L('l16', { min: 14,
     cells: {
       c1: '{ Gendy1.ar(1, 1, 1, 1, 100, 400) * 0.2 ! 2 }.play;',
       c2: '{ Pan2.ar(Gendy1.ar(minfreq: MouseX.kr(20, 800, 1), maxfreq: MouseX.kr(20, 800, 1) * 2) * 0.2) }.play;',
@@ -182,8 +182,8 @@ M('m3', 'yel', [1, 2, 16, 19], [
     challenge: { starter: '// Your own Gendy1 texture\n', checks: [{ ugen: 'Gendy1' }, { sound: true }] },
   }),
 ]),
-M('m4', 'mag', [1, 2, 4], [
-  L('l17', { min: 16, ch: [1, 2], quote: 'parmenter_synthdef',
+M('m4', 'mag', [
+  L('l17', { min: 16,
     cells: {
       c1: '(\nSynthDef(\\blip, { |out = 0, freq = 440, amp = 0.2, pan = 0|\n  var env = EnvGen.kr(Env.perc(0.005, 0.6), doneAction: 2);\n  var sig = Blip.ar(freq, 6) * env * amp;\n  Out.ar(out, Pan2.ar(sig, pan));\n}).add;\n)',
       c2: 'Synth(\\blip);\nSynth(\\blip, [\\freq, 660, \\pan, 0.8]);',
@@ -195,7 +195,7 @@ M('m4', 'mag', [1, 2, 4], [
     quiz: { answer: 3 },
     challenge: { starter: '// Define \\bell with a freq argument and play it twice\n', checks: [{ defAdded: true }, { synths: 2 }, { sound: true }] },
   }),
-  L('l18', { min: 16, ch: [1, 2],
+  L('l18', { min: 16,
     cells: {
       c1: '(\nSynthDef(\\reverb, { |in, out = 0, mix = 0.4|\n  var sig = In.ar(in, 2);\n  Out.ar(out, FreeVerb2.ar(sig[0], sig[1], mix, 0.9, 0.3));\n}).add;\n\nSynthDef(\\ping, { |out = 0, freq = 800|\n  var sig = SinOsc.ar(freq) * EnvGen.kr(Env.perc(0.001, 0.3), doneAction: 2) * 0.3;\n  Out.ar(out, Pan2.ar(sig, Rand(-0.8, 0.8)));\n}).add;\n)',
       c2: '~fx = Bus.audio(s, 2);\n~verb = Synth.tail(s, \\reverb, [\\in, ~fx]);',
@@ -205,7 +205,7 @@ M('m4', 'mag', [1, 2, 4], [
     quiz: { answer: 2 },
     challenge: { starter: '// Send a sound through a private bus into an effect synth\n', checks: [{ ugen: 'In' }, { busOut: true }, { sound: true }] },
   }),
-  L('l19', { min: 14, ch: [2],
+  L('l19', { min: 14,
     cells: {
       c1: '(\n{\n  var trig = Impulse.kr(6);\n  var f = Demand.kr(trig, 0, Dseq([60, 63, 67, 70, 72].midicps, inf));\n  Pulse.ar(f, 0.3, 0.2) * Decay2.kr(trig, 0.01, 0.15) ! 2\n}.play;\n)',
       c2: '{ SinOsc.ar(Demand.kr(Impulse.kr(10), 0, Drand([400, 500, 600, 800], inf)), 0, 0.15) ! 2 }.play;',
@@ -215,7 +215,7 @@ M('m4', 'mag', [1, 2, 4], [
     quiz: { answer: 0 },
     challenge: { starter: '// A melody sequenced on the server with Demand + Dseq\n', checks: [{ ugen: 'Demand' }, { code: /Dseq/ }, { sound: true }] },
   }),
-  L('l20', { min: 14, ch: [4], quote: 'ins', kbd: true,
+  L('l20', { min: 14, kbd: true,
     cells: {
       c1: '(\nSynthDef(\\key, { |out = 0, freq = 440, amp = 0.2|\n  var env = EnvGen.kr(Env.perc(0.005, 1.2), doneAction: 2);\n  Out.ar(out, Pan2.ar(LPF.ar(Saw.ar(freq), freq * 6) * env * amp));\n}).add;\n\nMIDIdef.noteOn(\\keys, { |vel, note|\n  Synth(\\key, [\\freq, note.midicps, \\amp, vel / 127 * 0.3]);\n});\n)',
       c2: 'MIDIIn.connectAll;   // also listens to a real MIDI keyboard (Chrome / Edge)',
@@ -227,8 +227,8 @@ M('m4', 'mag', [1, 2, 4], [
     challenge: { starter: '// A MIDIdef that plays a sound for every key\n', checks: [{ midi: true }, { sound: true }] },
   }),
 ]),
-M('m5', 'cya', [3, 6, 19], [
-  L('l21', { min: 15, ch: [3], quote: 'wilson_ways',
+M('m5', 'cya', [
+  L('l21', { min: 15,
     cells: {
       c1: 'fork { 8.do { |i| (degree: i).play; 0.25.wait } };',
       c2: 'r = fork { loop { (degree: [0, 2, 4, 7].choose, octave: [4, 5, 6].choose, dur: 0.2).play; 0.2.wait } };',
@@ -239,7 +239,7 @@ M('m5', 'cya', [3, 6, 19], [
     quiz: { answer: 2 },
     challenge: { starter: '// A routine that plays at least 8 notes, with .wait between them\nTempoClock.default.tempo = 1;\n', checks: [{ code: /wait/ }, { notes: 8 }] },
   }),
-  L('l22', { min: 16, ch: [6], quote: 'kuivila',
+  L('l22', { min: 16,
     cells: {
       c1: 'Pbind(\\degree, Pseq([0, 1, 2, 3, 4, 5, 6, 7], 1), \\dur, 0.25).play;',
       c2: 'Pbind(\\degree, Prand([0, 2, 4, 7], 16), \\dur, Pseq([0.25, 0.125, 0.125], inf), \\legato, 0.3).play;',
@@ -250,7 +250,7 @@ M('m5', 'cya', [3, 6, 19], [
     quiz: { answer: 1 },
     challenge: { starter: '// A Pbind with 8 notes in a minor scale\n', checks: [{ code: /Pbind/ }, { code: /minor|Scale/ }, { notes: 8 }] },
   }),
-  L('l23', { min: 18, ch: [6],
+  L('l23', { min: 18,
     cells: {
       c1: '(\nSynthDef(\\pluck, { |out = 0, freq = 440, amp = 0.3, pan = 0|\n  var sig = Pluck.ar(WhiteNoise.ar(0.5), Impulse.kr(0), 0.05, freq.reciprocal, 2, 0.3);\n  DetectSilence.ar(sig, doneAction: 2);\n  Out.ar(out, Pan2.ar(sig * amp, pan));\n}).add;\n)',
       c2: 'Pdef(\\mel, Pbind(\\instrument, \\pluck, \\scale, Scale.dorian, \\degree, Pseq([0, 2, 4, 6, 7, 6, 4, 2], inf), \\dur, 0.25)).play;',
@@ -261,7 +261,7 @@ M('m5', 'cya', [3, 6, 19], [
     quiz: { answer: 3 },
     challenge: { starter: '// Two simultaneous parts with Ppar\n', checks: [{ code: /Ppar/ }, { notes: 6 }] },
   }),
-  L('l24', { min: 16, ch: [19], quote: 'stoch',
+  L('l24', { min: 16,
     cells: {
       c1: '// a random walk: each note is close to the previous one\nPbind(\\degree, Pbrown(-7, 7, 2, 32), \\dur, 0.125).play;',
       c2: 'Pbind(\\degree, Pwhite(0, 7), \\dur, Pwrand([0.125, 0.25, 0.5], [0.6, 0.3, 0.1], 32)).play;',
@@ -272,8 +272,8 @@ M('m5', 'cya', [3, 6, 19], [
     challenge: { starter: '// A melody that wanders: use Pbrown\n', checks: [{ code: /Pbrown/ }, { notes: 8 }] },
   }),
 ]),
-M('m6', 'yel', [7, 23, 27], [
-  L('l25', { min: 18, ch: [7], quote: 'jit',
+M('m6', 'yel', [
+  L('l25', { min: 18,
     cells: {
       c1: 'Ndef(\\a, { SinOsc.ar([300, 301], 0, 0.1) }).play;',
       c2: 'Ndef(\\a).fadeTime = 3;\nNdef(\\a, { RLPF.ar(Saw.ar([100, 101], 0.1), LFNoise1.kr(1).range(300, 2000), 0.2) });',
@@ -285,7 +285,7 @@ M('m6', 'yel', [7, 23, 27], [
     quiz: { answer: 2 },
     challenge: { starter: '// Play an Ndef and redefine it at least twice while it sounds\n', checks: [{ ndefVersions: 3 }, { sound: true }] },
   }),
-  L('l26', { min: 12, ch: [27], quote: 'tweets',
+  L('l26', { min: 12,
     cells: {
       c1: 'play{Splay.ar(SinOsc.ar((1..8)*55*LFNoise0.kr(1/4!8).range(1,1.02),0,LFPulse.kr((1..8)/2)*0.1))}',
       c2: 'play{GVerb.ar(Ringz.ar(Dust.ar(3),[200,301,453]*LFNoise0.kr(1/2).range(1,2),0.5).sum*0.05,20,4)}',
@@ -296,19 +296,19 @@ M('m6', 'yel', [7, 23, 27], [
     challenge: { starter: '// Your SCTweet: 140 characters max\nplay{}', checks: [{ maxChars: 140 }, { sound: true }] },
   }),
 ]),
-M('m7', 'mag', [13, 14, 15, 17, 22], [
-  L('l27', { min: 16, ch: [17, 22], quote: 'tuning',
+M('m7', 'mag', [
+  L('l27', { min: 16,
     cells: {
       c1: '// equal temperament (12-ET) major triad\n{ SinOsc.ar([0, 4, 7].midiratio * 220, 0, 0.1).sum ! 2 }.play;',
       c2: '// just intonation: pure ratios 4:5:6\n{ SinOsc.ar([1, 5/4, 3/2] * 220, 0, 0.1).sum ! 2 }.play;',
       c3: 'Pbind(\\scale, Scale.major(\\just), \\degree, Pseq((0..7) ++ [[0, 2, 4]], 1), \\dur, 0.3).play;',
       c4: '// 19 equal divisions of the octave\nPbind(\\stepsPerOctave, 19, \\note, Pseq((0..19), 1), \\dur, 0.15).play;',
-      c5: '// Japanese pentatonic scales (see chapter 22, "SuperCollider in Japan")\nPbind(\\scale, Pseq([Scale.hirajoshi, Scale.kumoi], inf), \\degree, Pseq((0..5), 2), \\dur, 0.18).play;',
+      c5: '// Japanese pentatonic scales\nPbind(\\scale, Pseq([Scale.hirajoshi, Scale.kumoi], inf), \\degree, Pseq((0..5), 2), \\dur, 0.18).play;',
     },
     quiz: { answer: 1 },
     challenge: { starter: '// Play a melody in a tuning that is not 12-ET\n', checks: [{ code: /stepsPerOctave|just|pythagorean|Tuning|et19|et31|chromatic24|ratio|\/\s*\d/ }, { notes: 5 }] },
   }),
-  L('l28', { min: 16, ch: [13], quote: 'sonif',
+  L('l28', { min: 16,
     cells: {
       c1: '(\n// monthly temperatures (°C) of an imaginary city\n~data = [26, 25, 23, 19, 15, 12, 11, 13, 16, 19, 22, 25];\nPbind(\n  \\freq, Pseq(~data.linexp(~data.minItem, ~data.maxItem, 200, 1200)),\n  \\dur, 0.25\n).play;\n)',
       c2: '(\nPbind(\n  \\freq, Pseq(~data.linexp(10, 27, 200, 1200)),\n  \\pan, Pseq(~data.linlin(10, 27, -1, 1)),\n  \\amp, Pseq(~data.linlin(10, 27, 0.05, 0.3)),\n  \\dur, 0.25\n).play;\n)',
@@ -317,7 +317,7 @@ M('m7', 'mag', [13, 14, 15, 17, 22], [
     quiz: { answer: 2 },
     challenge: { starter: '// Sonify an array of at least 10 values\n', checks: [{ code: /linlin|linexp|explin/ }, { notes: 10 }] },
   }),
-  L('l29', { min: 15, ch: [14], quote: 'space',
+  L('l29', { min: 15,
     cells: {
       c1: '// watch it in X/Y mode on the scope\n{ Pan2.ar(Decay2.ar(Impulse.ar(8), 0.005, 0.1) * PinkNoise.ar(0.5), LFSaw.kr(0.25)) }.play;',
       c2: '(\n// distance: farther = quieter, darker and more reverberant\n{\n  var dist = MouseY.kr(1, 20);\n  var src = Decay2.ar(Impulse.ar(4), 0.002, 0.2) * Saw.ar(200);\n  var dry = LPF.ar(src, 12000 / dist) / dist;\n  FreeVerb.ar(Pan2.ar(dry, MouseX.kr(-1, 1)), (dist / 20).sqrt, 0.8) * 0.8\n}.play;\n)',
@@ -327,7 +327,7 @@ M('m7', 'mag', [13, 14, 15, 17, 22], [
     quiz: { answer: 3 },
     challenge: { starter: '// Move a sound around the stereo field with Pan2 and an LFO\n', checks: [{ ugen: 'Pan2' }, { anyUgen: ['SinOsc', 'LFSaw', 'LFTri', 'LFNoise1', 'LFNoise2', 'LFNoise0'] }, { sound: true }] },
   }),
-  L('l30', { min: 16, ch: [15], quote: 'ml',
+  L('l30', { min: 16,
     cells: {
       c1: '(\n// an envelope follower drives a filter\n{\n  var drums = Decay2.ar(Impulse.ar([2, 3]), 0.005, 0.25).sum * WhiteNoise.ar(0.5);\n  var amp = Amplitude.kr(drums, 0.01, 0.2);\n  RLPF.ar(Saw.ar(55, 0.2), amp.linexp(0, 0.5, 200, 4000), 0.2) + (drums * 0.3) ! 2\n}.play;\n)',
       c2: '(\n// pitch tracking: a sine follows a melody\n{\n  var mel = Saw.ar(Duty.kr(0.25, 0, Dseq([220, 247, 262, 294, 330], inf)), 0.2);\n  var pitch = Pitch.kr(mel)[0];\n  [mel, SinOsc.ar(pitch * 1.5, 0, 0.15)]\n}.play;\n)',
@@ -339,43 +339,7 @@ M('m7', 'mag', [13, 14, 15, 17, 22], [
 ]),
 ];
 
-// Book quotes: verbatim, short, attributed. Translations live in the language files.
-const quotes = {
-  mccartney: { text: 'SuperCollider is a language for describing sound processes.', who: 'James McCartney', where: 'Foreword' },
-  mccartney2: { text: 'The main idea of SuperCollider is to algorithmically compose objects to create sound-generating processes.', who: 'James McCartney', where: 'Foreword' },
-  intro: { text: 'You can learn a little at a time in such a way that you hardly notice that you’re programming until it’s too late—and you’re hooked!', who: 'Scott Wilson, David Cottle, Nick Collins', where: 'Introduction to the Second Edition' },
-  safety: { text: 'We suggest you start each example with the volume all the way down, and then slowly raise it to a comfortable level.', who: 'Scott Wilson, David Cottle, Nick Collins', where: 'Introduction to the Second Edition' },
-  cottle_goal: { text: 'The goal is getting interesting sounds as quickly as possible.', who: 'David Michael Cottle', where: 'Chapter 1, Beginner’s Tutorial' },
-  cottle_panic: { text: 'Don’t panic. This chapter is intended to push the envelope and set you up for later discussions.', who: 'David Michael Cottle', where: 'Chapter 1, Beginner’s Tutorial' },
-  cottle_magic: { text: 'Arrays have many applications, but multichannel expansion is one that borders on magic.', who: 'David Michael Cottle', where: 'Chapter 1, Beginner’s Tutorial' },
-  parmenter_ugen: { text: 'UGens in SuperCollider provide an efficient modular system for creating complicated audio networks.', who: 'Joshua Parmenter', where: 'Chapter 2, The Unit Generator' },
-  parmenter_synthdef: { text: 'All synthesis is done on the server, and a SynthDef is always created.', who: 'Joshua Parmenter', where: 'Chapter 2, The Unit Generator' },
-  wilson_ways: { text: 'SC doesn’t present the user with a single “preferred” way of working.', who: 'Scott Wilson, Julio d’Escriván', where: 'Chapter 3, Composition with SuperCollider' },
-  ins: { text: 'Sometimes SuperCollider alone isn’t enough, and you want to have input from external devices or other programs.', who: 'Marije A. J. Baalman, Miguel Negrão, Stefan Kersten, Till Bovermann', where: 'Chapter 4, Ins and Outs' },
-  kuivila: { text: 'Patterns are analogous to musical notation; they are abstract representations of sequences independent of any specific performance.', who: 'Ron Kuivila', where: 'Chapter 6, Events and Patterns' },
-  jit: { text: 'Instead of planning ahead and providing a large number of parameters, we may modify the program itself at runtime.', who: 'Julian Rohrhuber, Alberto de Campo', where: 'Chapter 7, Just-in-Time Programming' },
-  sonif: { text: 'Sonification makes the inaudible audible.', who: 'Alberto de Campo, Julian Rohrhuber, Katharina Vogt, Till Bovermann', where: 'Chapter 13, Sonification and Auditory Display' },
-  space: { text: 'The notion of spatial sound is a tautology, as sound is a spatial phenomenon in itself.', who: 'Marije A. J. Baalman, Scott Wilson', where: 'Chapter 14, Spatialization' },
-  ml: { text: 'Machine listening is the capability of machines to simulate human auditory and musical abilities.', who: 'Nick Collins', where: 'Chapter 15, Machine Listening' },
-  micro: { text: 'The idea of composing music and sound from minute particles has been an interesting domain for both scientific and artistic research.', who: 'Alberto de Campo, Marcin Pietruszewski', where: 'Chapter 16, Microsound' },
-  tuning: { text: 'An audio programming language transforms the composition, performance, and appreciation of alternative systems of pitch.', who: 'Fabrice Mogini', where: 'Chapter 17, Alternative Tunings' },
-  stoch: { text: 'Any algorithm can be the source material for sound synthesis and algorithmic composition.', who: 'Sergio Luque, Daniel Mayer', where: 'Chapter 19, Stochastic and Deterministic Algorithms' },
-  tweets: { text: 'Within it, you can find drones, full compositions, minimalist pieces, dance music, an enormous range of noise flavors and random processes.', who: 'Fellipe M. Martins', where: 'Chapter 27, SCTweets' },
-};
 
-// Chapter list of the book (for the map on the Book page)
-const chapters = [
-  [1, 'Beginner’s Tutorial', 'David Michael Cottle'], [2, 'The Unit Generator', 'Joshua Parmenter'], [3, 'Composition with SuperCollider', 'Scott Wilson, Julio d’Escriván'],
-  [4, 'Ins and Outs: SuperCollider and External Devices', 'Baalman, Negrão, Kersten, Bovermann'], [5, 'Programming in SuperCollider', 'Iannis Zannos'], [6, 'Events and Patterns', 'Ron Kuivila'],
-  [7, 'Just-in-Time Programming', 'Julian Rohrhuber, Alberto de Campo'], [8, 'Object Modeling', 'de Campo, Rohrhuber, Bovermann'], [9, 'Installing, Setting Up, and Running the SuperCollider IDE', 'Norah Lorway'],
-  [10, 'Alternative IDEs for SuperCollider', 'Konstantinos Vasilakos'], [11, 'SuperCollider on Small Computers', 'Matthew John Yee-King'], [12, 'The SuperCollider GUI Library', 'Eli Fieldsteel'],
-  [13, 'Sonification and Auditory Display', 'de Campo, Rohrhuber, Vogt, Bovermann'], [14, 'Spatialization with SuperCollider', 'Marije A. J. Baalman, Scott Wilson'], [15, 'Machine Listening in SuperCollider', 'Nick Collins'],
-  [16, 'Microsound', 'Alberto de Campo, Marcin Pietruszewski'], [17, 'Alternative Tunings with SuperCollider', 'Fabrice Mogini'], [18, 'Non-Real-Time Synthesis and Object-Oriented Composition', 'Brian Willkie, Joshua Parmenter'],
-  [19, 'Stochastic and Deterministic Algorithms', 'Sergio Luque, Daniel Mayer'], [20, 'Implementing New Language Syntax', 'H. James Harkins'], [21, 'Interface Investigations', 'Thor Magnusson'],
-  [22, 'SuperCollider in Japan', 'Takeko Akamatsu'], [23, 'Dialects, Constraints, and Systems within Systems', 'Rohrhuber, Hall, de Campo'], [24, 'Artists’ Statements', 'various artists'],
-  [25, 'Machine Learning in SuperCollider', 'Chris Kiefer, Shelly Knotts'], [26, 'Notations and Score-Making', 'Hall, Armstrong, Hoadley'], [27, 'SCTweets: Character Matters', 'Fellipe M. Martins'],
-  [28, 'The SuperCollider Language Implementation', 'Stefan Kersten'], [29, 'Writing Unit Generator Plug-ins', 'Dan Stowell, Christof Ressi'], [30, 'Inside scsynth', 'Ross Bencina'],
-];
 
 // Tips: code examples (texts in language files, same order)
 const tips = [
@@ -434,5 +398,5 @@ const examples = [
   ['Feedback', '{\n  var fb = LocalIn.ar(2);\n  var sig = Decay.ar(Impulse.ar(0.3), 0.2, PinkNoise.ar(0.3)) + (fb * 0.8);\n  sig = DelayC.ar(sig, 0.5, LFNoise1.kr(0.1 ! 2).range(0.1, 0.5));\n  LocalOut.ar(LPF.ar(sig.tanh, 4000).reverse);\n  sig * 0.5\n}.play;'],
 ];
 
-return { modules, quotes, chapters, tips, ref, examples };
+return { modules, tips, ref, examples };
 })();

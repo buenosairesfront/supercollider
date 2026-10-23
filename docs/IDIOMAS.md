@@ -20,7 +20,7 @@ Sólo se descarga el archivo del idioma activo (más español e inglés como res
 
 ## Qué se traduce
 
-Toda la interfaz, los 7 módulos, las 30 lecciones (texto, títulos de los ejemplos, quiz, desafío, criterios y pista), los 24 consejos, las ~155 descripciones de la referencia, los 10 laboratorios, la página del libro y el aviso legal. Las citas del libro se muestran siempre en inglés (textuales) con una traducción libre debajo.
+Toda la interfaz, los 7 módulos, las 30 lecciones (texto, títulos de los ejemplos, quiz, desafío, criterios y pista), los 24 consejos, las ~155 descripciones de la referencia, los 10 laboratorios y la página de recursos.
 
 No se traducen, a propósito: el código de SuperCollider (clases, mensajes, comentarios en inglés como en la documentación oficial) ni los nombres técnicos de UGens.
 
@@ -32,14 +32,13 @@ En `les.lXX.body` (con `String.raw`):
 - `## Título` → subtítulo.
 - `- ítem` → lista.
 - `[[c1]]` → bloque de código `c1` de `content/course.js`.
-- `[[q:clave]]` → cita del libro (`quotes` en `course.js`).
 - `!! texto` → recuadro de consejo pro.
 - Inline: `«código»`, `**negrita**`, `*cursiva*`, `[texto](url)`.
 
 ## Agregar un idioma
 
 1. Copiá `content/en.js` a `content/xx.js` y cambiá `.en =` por `.xx =`.
-2. Traducí los valores (no las claves). Mantené los marcadores `[[c1]]`, `[[q:…]]` y el mismo número de opciones (4) y de criterios en cada desafío.
+2. Traducí los valores (no las claves). Mantené los marcadores `[[c1]]` y el mismo número de opciones (4) y de criterios en cada desafío.
 3. En `js/app.js`, sumá el código en `LANGS`, el nombre en `LANG_NAMES` y el `lang` en `DOC_LANG`.
 4. En `sw.js`, sumá el archivo a `FILES`.
 5. Si el alfabeto no es latino, sumá una fuente de respaldo en `--disp` y `--mono` (`css/app.css`).

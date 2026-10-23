@@ -3,20 +3,21 @@
 const R = String.raw;
 (window.SC_LANG = window.SC_LANG || {}).de = {
 ui: {
-  nav_home: 'Start', nav_course: 'Kurs', nav_labs: 'Labor', nav_free: 'Freier Code', nav_ref: 'Referenz', nav_tips: 'Tipps', nav_book: 'Buch',
+  nav_res: 'Ressourcen', res_title: 'Ressourcen', res_intro: 'Zum Weiterlernen mit dem Desktop-SuperCollider: offizielle Website, Dokumentation, Forum und Quellcode. Alles frei und kostenlos.', res_site: 'Offizielle Website und Downloads', res_site_d: 'SuperCollider für Windows, macOS und Linux, kostenlos und quelloffen.', res_docs: 'Offizielle Dokumentation', res_docs_d: 'Die Hilfe zu allen Klassen und UGens, dieselbe wie in der IDE.', res_tut: 'Offizielles Tutorial', res_tut_d: '«Getting Started With SuperCollider», der Einstiegskurs der Dokumentation.', res_forum: 'Community-Forum', res_forum_d: 'scsynth.org: Fragen, Projekte und Neuigkeiten.', res_sccode: 'sccode.org', res_sccode_d: 'Von der Community geteilter Code zum Lernen und Spielen.', res_src: 'Quellcode', res_src_d: 'Das SuperCollider-Repository auf GitHub.',
+  nav_home: 'Start', nav_course: 'Kurs', nav_labs: 'Labor', nav_free: 'Freier Code', nav_ref: 'Referenz', nav_tips: 'Tipps', 
   tagline: 'SuperCollider im Browser lernen · U-MA',
   hero_1: 'SuperCollider', hero_2: 'im Browser',
   hero_lead: 'Ein vollständiger Kurs in Klangsynthese und Musikprogrammierung mit einer Echtzeit-Audio-Engine. Du schreibst SuperCollider-Code, führst ihn aus und siehst ihn klingen: Oszilloskop, Spektrum, UGen-Graph und Zeitleiste. Ohne Installation.',
   start: 'Loslegen', continue: 'Weiter', level: 'Stufe', lessons: 'Lektionen', streak: 'Serie', days: 'Tage', modules: 'Module', module: 'Modul',
   try_now: 'Jetzt ausprobieren', try_title: 'Dein erster Klang', try_note: 'Klicke auf ▶ oder setze den Cursor in den Code und drücke Strg + Enter (Cmd + Enter auf dem Mac). Zum Stoppen: Strg + . oder die STOP-Taste.',
-  course_map: 'Kursübersicht', tip_day: 'Tipp des Tages', all_tips: 'Alle Tipps', reference_book: 'Referenzbuch',
-  book_short: 'Dieser Kurs orientiert sich an *The SuperCollider Book* (2. Aufl., MIT Press). Wir zitieren kurze Passagen zu Bildungszwecken. Wenn dir das Buch hilft, kauf ein Exemplar: So unterstützt du die Autorinnen und Autoren am besten.',
-  book_read_more: 'Über das Buch und rechtlicher Hinweis', buy_book: 'Buch kaufen', book_code: 'Offizieller Code zum Buch',
+  course_map: 'Kursübersicht', tip_day: 'Tipp des Tages', all_tips: 'Alle Tipps', 
+  
+  
   badges: 'Abzeichen', badge_new: 'Neues Abzeichen', badge_sound: 'Erster Klang', badge_labs: 'Alle Labore', badge_chall: '10 Aufgaben', badge_quiz: 'Alle Quizze',
   levelup: 'Stufe {n}: {title}', lesson_done: 'Lektion abgeschlossen', completed: 'Abgeschlossen', mark_done: 'Als abgeschlossen markieren',
-  course_intro: 'Sieben Module von deiner ersten Codezeile bis zum maschinellen Hören. Jede Lektion hat Beispiele zum Bearbeiten und Ausführen, ein Quiz und eine Aufgabe, die sich selbst prüft. Die Reihenfolge folgt dem Weg, den das Buch Einsteigern empfiehlt: Tutorial, UGens, Komposition, Ein- und Ausgänge und danach die fortgeschrittenen Themen.',
-  book_ch: 'Buch, Kap.', example: 'Beispiel', run: 'Ausführen', reset: 'Zurücksetzen', copy: 'Kopieren', copied: 'Kopiert', open_free: 'In Freier Code öffnen',
-  pro_tip: 'Profi-Tipp', from_book: 'Aus dem Buch', free_tr: 'Freie Übersetzung', book_more: 'über das Buch',
+  course_intro: 'Sieben Module von deiner ersten Codezeile bis zum maschinellen Hören. Jede Lektion hat Beispiele zum Bearbeiten und Ausführen, ein Quiz und eine Aufgabe, die sich selbst prüft. Beginne mit Modul 1 und gehe der Reihe nach vor oder springe direkt zum Thema, das dich interessiert.',
+  example: 'Beispiel', run: 'Ausführen', reset: 'Zurücksetzen', copy: 'Kopieren', copied: 'Kopiert', open_free: 'In Freier Code öffnen',
+  pro_tip: 'Profi-Tipp', 
   quiz: 'Kurze Frage', challenge: 'Aufgabe', passed: 'bestanden', your_code: 'Dein Code', criteria: 'Kriterien', hint: 'Hinweis', challenge_ok: 'Aufgabe bestanden!',
   at_line: 'in Zeile', col: 'Spalte', stopped: 'alles gestoppt', rec_saved: 'Aufnahme gespeichert ({s} s, WAV)',
   mon_graph: 'UGen-Graph', mon_tree: 'Knotenbaum', mon_timeline: 'Ereignisse', mon_post: 'Post window', clear: 'Leeren',
@@ -35,12 +36,12 @@ ui: {
   cat_osc: 'Oszillatoren', cat_noise: 'Rauschen und Chaos', cat_filter: 'Filter und Resonatoren', cat_delay: 'Delays, Hall und Rückkopplung', cat_env: 'Hüllkurven', cat_trig: 'Trigger und Zufall auf dem Server', cat_demand: 'Demand', cat_io: 'Ein-, Ausgänge und Panorama', cat_analysis: 'Analyse und Dynamik', cat_grain: 'Granular', cat_lang: 'Sprache, Patterns und JITLib',
   tips_title: 'Tipps', tips_intro: 'Was Menschen, die täglich mit SuperCollider arbeiten, aus der Praxis gelernt haben: Gehörschutz, Fehlersuche, Performance, Stil, Mischung und Live Coding.',
   tcat_safe: 'Sicherheit', tcat_debug: 'Fehlersuche', tcat_perf: 'Performance', tcat_style: 'Stil', tcat_mix: 'Mischung', tcat_live: 'Live Coding', tcat_time: 'Zeit', tcat_synth: 'Synthese',
-  disclaimer: 'Rechtlicher Hinweis', how_used: 'Wie wir das Buch nutzen', quotes_used: 'Im Kurs verwendete Zitate', chapter_map: 'Kapitel ↔ Lektionen', chapter: 'Kapitel',
+  
   settings: 'Einstellungen', language: 'Sprache', theme: 'Design', th_system: 'System', th_light: 'Hell', th_dark: 'Dunkel', audio: 'Audio', volume: 'Gesamtlautstärke', limiter: 'Gehörschutz: Ausgang bei 0 dBFS begrenzen',
   safety_note: 'Beginne mit niedriger Lautstärke und erhöhe sie langsam. Mit Kopfhörern umso mehr.', progress: 'Fortschritt', export: 'Exportieren', import: 'Importieren', reset_progress: 'Fortschritt löschen', progress_note: 'Fortschritt, XP und deine Dateien werden in diesem Browser gespeichert. Exportiere sie, um sie auf ein anderes Gerät zu übertragen.', imported: 'Fortschritt importiert', bad_file: 'Diese Datei ist kein SuperCollider-Lab-Fortschritt.', shortcuts: 'Tastenkürzel', close: 'Schließen',
   post_hello: 'Schreibe Code und führe ihn mit Strg + Enter aus. Der erste Klang startet den Server.',
   footer_1: '**SuperCollider Lab** ist ein Lernwerkzeug von **Buenos Aires Front · U-MA**. Es läuft in deinem Browser: ein Interpreter für eine Teilmenge von sclang in JavaScript und eine scsynth-artige Synthese-Engine auf Web Audio. SuperCollider ist freie Software (GPL), geschaffen von James McCartney und gepflegt von seiner Community: [supercollider.github.io](https://supercollider.github.io).',
-  footer_disc: 'Unabhängiges Projekt, ohne Verbindung zu MIT Press, den Autorinnen und Autoren von *The SuperCollider Book* oder dem SuperCollider-Projekt. Zitate aus dem Buch sind kurz, mit Quellenangabe und dienen Bildungszwecken. [Vollständigen rechtlichen Hinweis lesen](#/book).',
+  footer_disc: 'Unabhängiges Bildungsprojekt ohne Verbindung zum SuperCollider-Projekt. Erklärungen, Beispiele und Audio-Engine sind eigenständig.',
   err_gui: 'Die GUI-Klassen von SuperCollider (Window, Slider…) gibt es in der Webversion nicht. Probiere die Labore: Bedienoberflächen, die Code schreiben.',
   err_buf: 'Buffer und das Laden von Audiodateien gibt es in dieser Webversion nicht: Alles wird live synthetisiert, nichts muss geladen werden.',
   err_osc: 'OSC (NetAddr, OSCdef) ist im Browser nicht verfügbar. Nutze MIDIdef mit einer MIDI-Tastatur oder der Bildschirmtastatur.',
@@ -79,9 +80,7 @@ Alles zwischen geschweiften Klammern «{ }» ist eine **Funktion**. Schickst du 
 
 Zum Stoppen gibt es den universellen Shortcut **Strg + .** (Cmd + . auf dem Mac). Du kannst auch die STOP-Taste benutzen oder alle Knoten auf dem Server freigeben:
 
-[[c4]]
-
-[[q:intro]]`,
+[[c4]]`,
   quiz: { q: 'Welches der beiden Programme erzeugt den Klang?', o: ['sclang, der Interpreter', 'scsynth, der Syntheseserver', 'Das Post window', 'Der Code-Editor'], e: 'Die Sprache (sclang) beschreibt und sendet; der Server (scsynth) berechnet die Audio-Samples. Deshalb kann der Server auf einem anderen Rechner laufen – oder hier im Browser.' },
   ch: { task: 'Lass eine Sinuswelle mit **220 Hz** und Amplitude **0.1** erklingen. Führe den Code aus und stoppe ihn am Ende mit Strg + .', checks: ['Verwendet «SinOsc»', 'Die Frequenz ist 220', 'Es klingt'], hint: 'Kopiere Beispiel 3 und ändere 440 in 220.' } },
 l02: { t: 'Nachrichten, Argumente und Verschachtelung', s: 'Empfänger.nachricht(Argumente) und Ideen verketten.',
@@ -106,9 +105,7 @@ Eine Nachricht kann Argument einer anderen sein. Das heißt **Verschachtelung** 
 
 Computer erzeugen keinen echten Zufall. Wenn du einen **Seed** festlegst, bekommst du immer dieselbe Folge – praktisch, um eine Version eines generativen Stücks zu wiederholen.
 
-[[c5]]
-
-[[q:cottle_goal]]`,
+[[c5]]`,
   quiz: { q: 'Wer empfängt in «round(exprand(1, 10), 0.1)» die Nachricht «round»?', o: ['Die Zahl 0.1', 'Die Zahl 1', 'Das Ergebnis von «exprand(1, 10)»', 'Die Zahl 10'], e: 'Das erste Argument der funktionalen Schreibweise ist der Empfänger: entspricht «exprand(1, 10).round(0.1)».' },
   ch: { task: 'Erzeuge ein Array mit **8 zufälligen MIDI-Noten zwischen 48 und 72**, aufsteigend sortiert. Der letzte Ausdruck deines Codes muss das Array sein.', checks: ['Hat 8 Elemente', 'Alle zwischen 48 und 72', 'Ist sortiert'], hint: 'Probiere «{ rrand(48, 72) } ! 8» und schick «sort».' } },
 l03: { t: 'Variablen, Funktionen und Rangfolge', s: 'Werte speichern, Verhalten definieren, von links nach rechts lesen.',
@@ -131,9 +128,7 @@ Drei Arten von Variablen wirst du ständig benutzen:
 
 [[c4]]
 
-!! Siehst du «Variable 'x' not defined», musst du sie mit «var» deklarieren oder «~x» verwenden. Der häufigste Anfängerfehler.
-
-[[q:cottle_panic]]`,
+!! Siehst du «Variable 'x' not defined», musst du sie mit «var» deklarieren oder «~x» verwenden. Der häufigste Anfängerfehler.`,
   quiz: { q: 'Was ergibt «5 + 2 * 3» in SuperCollider?', o: ['11', '13', '30', '21'], e: 'Von links nach rechts: (5 + 2) = 7, und 7 * 3 = 21. Für 11 schreibe «5 + (2 * 3)».' },
   ch: { task: 'Schreibe «~mtof», eine Funktion, die eine MIDI-Note erhält und ihre Frequenz in Hz zurückgibt. «~mtof.(69)» muss 440 ergeben.', checks: ['«~mtof.(69)» ergibt 440', '«~mtof.(81)» ergibt 880'], hint: 'Zahlen verstehen «midicps». In der Funktion: «note.midicps».' } },
 l04: { t: 'Arrays und Collections', s: 'Wertelisten, Transformationen und eine Zwölftonmatrix.',
@@ -181,9 +176,7 @@ Die Reihenfolge der Argumente musst du dir nicht merken: Du kannst sie benennen.
 
 [[c6]]
 
-!! Ein Audiosignal reicht von -1 bis 1. Addierst du mehrere oder nutzt mul größer als 1, übersteuert es. Halte Amplituden niedrig (0.1 bis 0.3) und summiere mit Bedacht.
-
-[[q:parmenter_ugen]]`,
+!! Ein Audiosignal reicht von -1 bis 1. Addierst du mehrere oder nutzt mul größer als 1, übersteuert es. Halte Amplituden niedrig (0.1 bis 0.3) und summiere mit Bedacht.`,
   quiz: { q: 'Was bewirkt das Argument «mul» eines UGens?', o: ['Ändert die Frequenz', 'Multipliziert den Ausgang (skaliert die Amplitude)', 'Addiert einen konstanten Wert', 'Wiederholt den Klang'], e: 'mul skaliert das Signal, add verschiebt es. Zusammen kann ein Oszillator jeden Wertebereich steuern.' },
   ch: { task: 'Spiele eine Sinuswelle mit **330 Hz** und Amplitude **0.15**.', checks: ['Verwendet «SinOsc»', 'Die Frequenz ist 330', 'Es klingt'], hint: '«{ SinOsc.ar(330, 0, 0.15) }.play» oder mit benannten Argumenten.' } },
 l06: { t: 'Oszillatoren und Rauschen', s: 'Wellenformen, Obertöne und Rauschfarben.',
@@ -292,8 +285,6 @@ Achtung, eine SuperCollider-Eigenheit: Ein Monoklang kommt **nur aus dem linken 
 
 [[c2]]
 
-[[q:cottle_magic]]
-
 «Pan2» platziert ein Monosignal im Stereofeld (-1 links, 1 rechts). «Splay» verteilt viele Stimmen zwischen links und rechts. «Mix» summiert ein Array von Kanälen zu einem. Probiere den **X/Y**-Modus des Oszilloskops, um das Stereobild zu sehen.
 
 [[c3]]
@@ -389,9 +380,7 @@ Mit «LocalIn» und «LocalOut» baust du eigene Rückkopplungen in einem Synth.
   ch: { task: 'Ein trockener Klang + ein Echo mit «CombN» + Hall mit «FreeVerb».', checks: ['Verwendet «CombN»', 'Verwendet «FreeVerb»', 'Es klingt'], hint: 'Addiere Signal und Echo und schicke alles durch FreeVerb.' } },
 l15: { t: 'Microsound und Granularsynthese', s: 'Klänge aus Partikeln.',
   cells: { c1: 'regelmäßige Körner', c2: 'Granularwolke', c3: 'ein Korn als SynthDef', c4: 'Körnerregen' },
-  body: R`[[q:micro]]
-
-Ein **Korn** ist ein sehr kurzer Klang (1 bis 100 Millisekunden) mit weicher Hüllkurve. Tausende Körner pro Sekunde ergeben Texturen, Wolken und Verwandlungen, die anders unmöglich wären. Ist ein Korn sehr kurz, verschwindet seine Tonhöhe, und es wird zu einem gefärbten Klick.
+  body: R`Ein **Korn** ist ein sehr kurzer Klang (1 bis 100 Millisekunden) mit weicher Hüllkurve. Tausende Körner pro Sekunde ergeben Texturen, Wolken und Verwandlungen, die anders unmöglich wären. Ist ein Korn sehr kurz, verschwindet seine Tonhöhe, und es wird zu einem gefärbten Klick.
 
 [[c1]]
 
@@ -410,9 +399,7 @@ Man kann es auch aus der Sprache machen und pro Korn einen Synth starten. Zuerst
   ch: { task: 'Eine **Granularwolke**: «GrainSin», ausgelöst von «Dust».', checks: ['Verwendet «GrainSin»', 'Verwendet «Dust»', 'Es klingt'], hint: 'Sieh dir Beispiel 2 an und ändere die Bereiche.' } },
 l16: { t: 'Nicht-standardisierte Synthese und Chaos', s: 'Xenakis, chaotische Abbildungen und Algorithmen als Klangquelle.',
   cells: { c1: 'Gendy1', c2: 'Gendy1 auf der Maus', c3: 'Crackle', c4: 'logistische Abbildung', c5: 'Hénon-Abbildung' },
-  body: R`[[q:stoch]]
-
-**Nicht-standardisierte** Synthese geht nicht von der Akustik aus, sondern von Verfahren: Zahlen, Zufall, Chaos. **Gendy1** implementiert die dynamische stochastische Synthese von Iannis Xenakis: Die Wellenform besteht aus Punkten, die sich in Zufallsbewegungen verschieben.
+  body: R`**Nicht-standardisierte** Synthese geht nicht von der Akustik aus, sondern von Verfahren: Zahlen, Zufall, Chaos. **Gendy1** implementiert die dynamische stochastische Synthese von Iannis Xenakis: Die Wellenform besteht aus Punkten, die sich in Zufallsbewegungen verschieben.
 
 [[c1]]
 
@@ -432,8 +419,6 @@ l16: { t: 'Nicht-standardisierte Synthese und Chaos', s: 'Xenakis, chaotische Ab
 l17: { t: 'SynthDef und Synth', s: 'Einmal definieren, oft spielen.',
   cells: { c1: 'definieren', c2: 'spielen', c3: 'ein Pad mit gate', c4: 'erzeugen', c5: 'ändern', c6: 'loslassen' },
   body: R`Jedes «{ }.play» kompiliert ein neues Instrument. Für Instrumente, die du oft nutzt, definierst du besser eine **SynthDef**: ein benanntes Rezept, das der Server aufbewahrt. Daraus erzeugst du **Synths** (Instanzen), jede mit eigenen Werten.
-
-[[q:parmenter_synthdef]]
 
 Die Argumente der Funktion werden zu **Controls**, die du beim Erzeugen setzen und während des Klingens ändern kannst. Üblicherweise gibt es «out», um den Ausgangsbus zu wählen, und der Ausgang wird explizit mit «Out.ar» geschrieben.
 
@@ -494,9 +479,7 @@ Für reinen Zufall pro Trigger: «TRand» (oder «TIRand», «TExpRand»):
   ch: { task: 'Eine Melodie, im Server sequenziert mit «Demand» und «Dseq».', checks: ['Verwendet «Demand»', 'Verwendet «Dseq»', 'Es klingt'], hint: 'Beginne mit Beispiel 1 und ändere die Noten.' } },
 l20: { t: 'Ein- und Ausgänge', s: 'MIDI, Maus, Mikrofon und Aufnahme.',
   cells: { c1: 'ein MIDIdef', c2: 'MIDI verbinden', c3: 'Maustaste', c4: 'Mikrofon', c5: 'aufnehmen' },
-  body: R`[[q:ins]]
-
-Mit **MIDIdef** registrierst du eine Funktion, die auf MIDI-Nachrichten reagiert. Hier löst jede Note einen Synth aus. Spiele nach dem Ausführen auf der Bildschirmtastatur (oder deiner Computertastatur):
+  body: R`Mit **MIDIdef** registrierst du eine Funktion, die auf MIDI-Nachrichten reagiert. Hier löst jede Note einen Synth aus. Spiele nach dem Ausführen auf der Bildschirmtastatur (oder deiner Computertastatur):
 
 [[c1]]
 
@@ -539,16 +522,12 @@ Eine Routine ist auch ein **Stream**: Jedes «next» führt sie bis zum nächste
 
 [[c5]]
 
-[[q:wilson_ways]]
-
 !! Ein «loop» ohne «wait» blockiert den Interpreter. Diese App erkennt das und bricht mit einem Fehler ab, im Desktop-SuperCollider müsstest du neu starten.`,
   quiz: { q: 'Wie lange dauert «1.wait» in Sekunden bei «TempoClock.default.tempo = 2»?', o: ['2 Sekunden', '1 Sekunde', '0,5 Sekunden', 'Hängt von der Samplerate ab'], e: 'tempo = 2 bedeutet 2 Schläge pro Sekunde (120 BPM): Ein Schlag dauert 0,5 s.' },
   ch: { task: 'Eine Routine, die **mindestens 8 Noten** spielt, mit «wait» dazwischen.', checks: ['Verwendet «wait»', 'Mindestens 8 Noten erklingen'], hint: '«fork { 8.do { |i| (degree: i).play; 0.25.wait } }».' } },
 l22: { t: 'Patterns: Pbind', s: 'Musik als Regeln schreiben.',
   cells: { c1: 'eine Tonleiter', c2: 'Rhythmus und Zufall', c3: 'ein Stream', c4: 'Akkorde', c5: 'Molltonleiter' },
-  body: R`[[q:kuivila]]
-
-Ein **Pattern** beschreibt eine Wertefolge, ohne sie auszuführen. «Pbind» verbindet Schlüssel und Patterns zu **Events** (Noten). Die häufigsten Schlüssel: «degree» (Skalenstufe), «dur» (Dauer in Schlägen), «legato», «amp», «octave», «scale» und «instrument».
+  body: R`Ein **Pattern** beschreibt eine Wertefolge, ohne sie auszuführen. «Pbind» verbindet Schlüssel und Patterns zu **Events** (Noten). Die häufigsten Schlüssel: «degree» (Skalenstufe), «dur» (Dauer in Schlägen), «legato», «amp», «octave», «scale» und «instrument».
 
 [[c1]]
 
@@ -592,9 +571,7 @@ l23: { t: 'Pdef, Ppar und eigene Instrumente', s: 'Die Musik ändern, während s
   ch: { task: 'Spiele **zwei gleichzeitige Stimmen** mit «Ppar».', checks: ['Verwendet «Ppar»', 'Mindestens 6 Noten erklingen'], hint: 'Sieh dir Beispiel 5 an.' } },
 l24: { t: 'Algorithmen: Zufall, Irrfahrten und Ketten', s: 'Stochastische Komposition.',
   cells: { c1: 'Irrfahrt', c2: 'gewichteter Zufall', c3: 'Markow-Kette', c4: 'Seeds' },
-  body: R`[[q:stoch]]
-
-Nicht jeder Zufall klingt gleich. Eine **Irrfahrt** («Pbrown») bewegt sich in kleinen Schritten: Sie erzeugt Melodien mit Richtung. **Gewichteter** Zufall («Pwrand») macht manche Möglichkeiten wahrscheinlicher als andere.
+  body: R`Nicht jeder Zufall klingt gleich. Eine **Irrfahrt** («Pbrown») bewegt sich in kleinen Schritten: Sie erzeugt Melodien mit Richtung. **Gewichteter** Zufall («Pwrand») macht manche Möglichkeiten wahrscheinlicher als andere.
 
 [[c1]]
 
@@ -613,9 +590,7 @@ Und mit einem Seed wird Zufall reproduzierbar:
   ch: { task: 'Eine Melodie, die mit «Pbrown» **umherwandert**.', checks: ['Verwendet «Pbrown»', 'Mindestens 8 Noten erklingen'], hint: '«Pbind(\\degree, Pbrown(0, 14, 2, 16), \\dur, 0.15).play».' } },
 l25: { t: 'JITLib: Ndef und ProxySpace', s: 'Programmieren, während es klingt.',
   cells: { c1: 'ein Ndef', c2: 'mit Überblendung neu definieren', c3: 'Argumente und set', c4: 'Proxys verketten', c5: 'ProxySpace', c6: 'aufräumen' },
-  body: R`[[q:jit]]
-
-**JITLib** (Just In Time Library) erlaubt, das Programm zu ändern, während es läuft. Ein «Ndef» ist ein **Proxy**: ein benannter Ort für eine Klangquelle. Definierst du ihn neu, ersetzt die neue Quelle die alte mit einer **Überblendung** von «fadeTime» Sekunden.
+  body: R`**JITLib** (Just In Time Library) erlaubt, das Programm zu ändern, während es läuft. Ein «Ndef» ist ein **Proxy**: ein benannter Ort für eine Klangquelle. Definierst du ihn neu, ersetzt die neue Quelle die alte mit einer **Überblendung** von «fadeTime» Sekunden.
 
 [[c1]]
 
@@ -640,9 +615,7 @@ Ein Ndef kann mit «Ndef.ar(\name)» einen anderen lesen: So baust du einen modu
   ch: { task: 'Spiele einen «Ndef» und **definiere ihn mindestens zweimal neu**, während er klingt.', checks: ['Der Ndef hat 3 oder mehr Versionen', 'Es klingt'], hint: 'Führe «Ndef(\\x, { ... }).play» aus, ändere dann den Inhalt der Funktion und führe erneut aus.' } },
 l26: { t: 'SCTweets: die Kunst des kompakten Codes', s: '140 Zeichen Klang.',
   cells: { c1: 'atmende Akkorde', c2: 'Tropfen im Raum', c3: 'Dreieckssequenz', c4: 'Xenakis für die Hosentasche' },
-  body: R`[[q:tweets]]
-
-2009 begann die SuperCollider-Community, vollständige Stücke zu teilen, die in einen Tweet passten: **140 Zeichen**. **SCTweets** sind ein Spiel, aber auch eine Schule: Sie zwingen dich, Mehrkanal-Expansion, Syntax-Abkürzungen und UGens, die mit wenig viel erreichen, genau zu kennen.
+  body: R`2009 begann die SuperCollider-Community, vollständige Stücke zu teilen, die in einen Tweet passten: **140 Zeichen**. **SCTweets** sind ein Spiel, aber auch eine Schule: Sie zwingen dich, Mehrkanal-Expansion, Syntax-Abkürzungen und UGens, die mit wenig viel erreichen, genau zu kennen.
 
 Ein paar Tricks: «play{ }» statt «{ }.play», «!8» zum Vervielfachen von Stimmen, «(1..8)» für Reihen, Ein-Buchstaben-Variablen und keine Leerzeichen.
 
@@ -659,9 +632,7 @@ Ein paar Tricks: «play{ }» statt «{ }.play», «!8» zum Vervielfachen von St
   ch: { task: 'Dein **SCTweet**: ein klingendes Stück in **höchstens 140 Zeichen**.', checks: ['Höchstens 140 Zeichen', 'Es klingt'], hint: 'Beginne mit einem Beispiel und vereinfache es. «play{Splay.ar(SinOsc.ar((1..5)*99,0,0.1))}» hat 41 Zeichen.' } },
 l27: { t: 'Alternative Stimmungen', s: 'Gleichstufige Stimmung, reine Stimmung und andere Oktavteilungen.',
   cells: { c1: 'temperierter Akkord', c2: 'reiner Akkord', c3: 'reine Tonleiter', c4: '19-EDO', c5: 'japanische Tonleitern' },
-  body: R`[[q:tuning]]
-
-Das Klavier nutzt die zwölfstufige **gleichstufige Stimmung** (12-TET): Jeder Halbton ist die zwölfte Wurzel aus 2. Ein Kompromiss: Außer der Oktave ist kein Intervall akustisch rein. Die **reine Stimmung** nutzt ganzzahlige Verhältnisse (3/2, 5/4…). Höre den Unterschied zwischen diesen beiden Durakkorden: Der reine hat keine Schwebungen.
+  body: R`Das Klavier nutzt die zwölfstufige **gleichstufige Stimmung** (12-TET): Jeder Halbton ist die zwölfte Wurzel aus 2. Ein Kompromiss: Außer der Oktave ist kein Intervall akustisch rein. Die **reine Stimmung** nutzt ganzzahlige Verhältnisse (3/2, 5/4…). Höre den Unterschied zwischen diesen beiden Durakkorden: Der reine hat keine Schwebungen.
 
 [[c1]]
 
@@ -675,16 +646,14 @@ Du kannst die Oktave auch mit «stepsPerOctave» in eine andere Zahl von Teilen 
 
 [[c4]]
 
-SuperCollider bringt Tonleitern vieler Traditionen mit. Kapitel 22 des Buches widmet sich der SuperCollider-Szene in Japan; hier zwei japanische pentatonische Tonleitern:
+SuperCollider bringt Tonleitern vieler Musiktraditionen mit, darunter japanische, chinesische und indische. Hier zwei japanische pentatonische Tonleitern:
 
 [[c5]]`,
   quiz: { q: 'Welches Frequenzverhältnis entspricht einer reinen Quinte?', o: ['5/4', '3/2', '4/3', '2/1'], e: '3/2 ist die reine Quinte; 5/4 die große Terz; 4/3 die Quarte; 2/1 die Oktave.' },
   ch: { task: 'Spiele eine Melodie in einer Stimmung, die **nicht** 12-TET ist (rein, pythagoreisch oder anderes «stepsPerOctave»).', checks: ['Verwendet eine andere Stimmung', 'Mindestens 5 Noten erklingen'], hint: 'Sieh dir die Beispiele 3 und 4 an.' } },
 l28: { t: 'Sonifikation von Daten', s: 'Zahlen hören.',
   cells: { c1: 'Daten zu Tonhöhe', c2: 'mehrere Dimensionen', c3: 'kontinuierliche Sonifikation' },
-  body: R`[[q:sonif]]
-
-**Sonifizieren** heißt, Daten systematisch in Klang zu verwandeln, um sie zu hören: Trends, Ausreißer, Rhythmen. Die Grundtechnik ist das **Parameter-Mapping**: Jede Dimension der Daten steuert eine Dimension des Klangs (Tonhöhe, Zeit, Lautstärke, Panorama, Klangfarbe).
+  body: R`**Sonifizieren** heißt, Daten systematisch in Klang zu verwandeln, um sie zu hören: Trends, Ausreißer, Rhythmen. Die Grundtechnik ist das **Parameter-Mapping**: Jede Dimension der Daten steuert eine Dimension des Klangs (Tonhöhe, Zeit, Lautstärke, Panorama, Klangfarbe).
 
 «linlin» und «linexp» übersetzen einen Bereich in einen anderen. Für Tonhöhen nimm «linexp», weil wir Frequenz logarithmisch wahrnehmen.
 
@@ -701,9 +670,7 @@ Daten können auch eine kontinuierliche Hüllkurve werden:
   ch: { task: 'Sonifiziere ein Array mit **mindestens 10 Werten** mit «linlin» oder «linexp».', checks: ['Verwendet linlin, linexp oder explin', 'Mindestens 10 Noten erklingen'], hint: 'Erfinde eigene Daten oder nutze «~data» aus Beispiel 1.' } },
 l29: { t: 'Verräumlichung', s: 'Klänge platzieren und bewegen.',
   cells: { c1: 'bewegtes Panorama', c2: 'Entfernung', c3: 'Doppler-Effekt', c4: 'Stereobreite' },
-  body: R`[[q:space]]
-
-Im Stereo steuert der Pegelunterschied zwischen den Kanälen die seitliche Position («Pan2»). Öffne den **X/Y**-Modus des Oszilloskops: Du siehst, wie sich das Bild bewegt.
+  body: R`Im Stereo steuert der Pegelunterschied zwischen den Kanälen die seitliche Position («Pan2»). Öffne den **X/Y**-Modus des Oszilloskops: Du siehst, wie sich das Bild bewegt.
 
 [[c1]]
 
@@ -724,9 +691,7 @@ Ein Objekt, das nahe vorbeifährt, ändert durch den **Doppler-Effekt** seine To
   ch: { task: 'Bewege einen Klang mit «Pan2» und einem LFO durch das Stereofeld.', checks: ['Verwendet «Pan2»', 'Verwendet einen LFO', 'Es klingt'], hint: '«Pan2.ar(quelle, SinOsc.kr(0.3))».' } },
 l30: { t: 'Maschinelles Hören', s: 'Der Computer hört zu.',
   cells: { c1: 'Hüllkurvenfolger', c2: 'Tonhöhenerkennung', c3: 'mit dem Mikrofon' },
-  body: R`[[q:ml]]
-
-**Maschinelles Hören** gewinnt Informationen aus einem Signal: wie viel Energie («Amplitude»), welche Tonhöhe («Pitch»), wann ein Schlag beginnt. Damit kann ein System auf eine spielende Person reagieren: begleiten, nachahmen, antworten.
+  body: R`**Maschinelles Hören** gewinnt Informationen aus einem Signal: wie viel Energie («Amplitude»), welche Tonhöhe («Pitch»), wann ein Schlag beginnt. Damit kann ein System auf eine spielende Person reagieren: begleiten, nachahmen, antworten.
 
 [[c1]]
 
@@ -738,31 +703,9 @@ Dasselbe mit deiner Stimme oder deinem Instrument über das Mikrofon (mit Kopfh�
 
 [[c3]]
 
-!! Das Buch widmet dem maschinellen Hören und dem maschinellen Lernen in SuperCollider ganze Kapitel (15 und 25). Dies ist nur der erste Schritt.`,
+!! Das Desktop-SuperCollider bietet weitere FFT-basierte Analysewerkzeuge (zum Beispiel Onsets und MFCC). Dies ist nur der erste Schritt.`,
   quiz: { q: 'Was misst «Amplitude.kr(signal)»?', o: ['Die Amplitudenhüllkurve des Signals', 'Die Frequenz', 'Die Zahl der Obertöne', 'Die Stereoposition'], e: 'Ein Hüllkurvenfolger mit einstellbaren Attack- und Release-Zeiten.' },
   ch: { task: 'Nutze «Amplitude», damit ein Klang auf einen anderen reagiert.', checks: ['Verwendet «Amplitude»', 'Es klingt'], hint: 'Sieh dir Beispiel 1 an: Die Amplitude des Schlagzeugs bewegt das Filter.' } },
-},
-quotes: {
-  mccartney: 'SuperCollider ist eine Sprache zur Beschreibung von Klangprozessen.',
-  mccartney2: 'Die Hauptidee von SuperCollider ist, Objekte algorithmisch zu komponieren, um klangerzeugende Prozesse zu schaffen.',
-  intro: 'Man kann nach und nach lernen, sodass man kaum merkt, dass man programmiert, bis es zu spät ist – und man süchtig ist!',
-  safety: 'Wir empfehlen, jedes Beispiel mit ganz heruntergedrehter Lautstärke zu starten und sie dann langsam auf ein angenehmes Niveau zu erhöhen.',
-  cottle_goal: 'Das Ziel ist, so schnell wie möglich interessante Klänge zu erhalten.',
-  cottle_panic: 'Keine Panik. Dieses Kapitel soll Grenzen ausloten und dich auf spätere Diskussionen vorbereiten.',
-  cottle_magic: 'Arrays haben viele Anwendungen, aber die Mehrkanal-Expansion grenzt an Magie.',
-  parmenter_ugen: 'UGens in SuperCollider bieten ein effizientes modulares System, um komplexe Audionetzwerke zu erstellen.',
-  parmenter_synthdef: 'Die gesamte Synthese findet auf dem Server statt, und es wird immer eine SynthDef erzeugt.',
-  wilson_ways: 'SC gibt seinen Nutzer:innen nicht die eine „bevorzugte“ Arbeitsweise vor.',
-  ins: 'Manchmal reicht SuperCollider allein nicht aus, und man möchte Eingaben von externen Geräten oder anderen Programmen.',
-  kuivila: 'Patterns sind der Notenschrift vergleichbar: abstrakte Darstellungen von Abfolgen, unabhängig von einer bestimmten Aufführung.',
-  jit: 'Statt im Voraus zu planen und eine große Zahl von Parametern bereitzustellen, können wir das Programm selbst zur Laufzeit verändern.',
-  sonif: 'Sonifikation macht das Unhörbare hörbar.',
-  space: 'Der Begriff des räumlichen Klangs ist eine Tautologie, denn Klang ist an sich ein räumliches Phänomen.',
-  ml: 'Maschinelles Hören ist die Fähigkeit von Maschinen, menschliche auditive und musikalische Fähigkeiten zu simulieren.',
-  micro: 'Die Idee, Musik und Klang aus winzigen Partikeln zu komponieren, ist sowohl für die wissenschaftliche als auch für die künstlerische Forschung ein spannendes Feld.',
-  tuning: 'Eine Audio-Programmiersprache verändert Komposition, Aufführung und Wahrnehmung alternativer Tonhöhensysteme.',
-  stoch: 'Jeder Algorithmus kann Ausgangsmaterial für Klangsynthese und algorithmische Komposition sein.',
-  tweets: 'Darin findet man Drones, vollständige Kompositionen, minimalistische Stücke, Tanzmusik und eine enorme Bandbreite an Geräuschen und Zufallsprozessen.',
 },
 tips: [
   { t: 'Gesamtlautstärke senken', b: 'Stelle vor dem Experimentieren die Gesamtlautstärke auf -12 dB oder weniger. Ändern mit «s.volume» oder unter ⚙.' },
@@ -815,22 +758,6 @@ labs: {
   tune: { t: 'Stimmung', d: 'Teile die Oktave in N Teile und vergleiche sie mit reinen Intervallen.', tip: '12, 19, 31 und 53 EDO kommen den reinen Intervallen sehr nahe. Vergleiche die drei Akkorde.' },
   fx: { t: 'Effektkette', d: 'Sättigung, Echo, Filter und Hall auf verschiedenen Quellen.', tip: 'Die Reihenfolge zählt: Sättigung vor dem Echo klingt anders als danach. Probiere es im Code.' },
   chaos: { t: 'Chaos und nicht-standardisierte Synthese', d: 'Gendy1, chaotische Abbildungen und gestuftes Rauschen.', tip: 'Erhöhe das Chaos langsam: Es gibt Zonen, in denen der Klang sich ordnet, und andere, in denen er explodiert.' },
-},
-book: {
-  about: 'Herausgegeben von Scott Wilson, David Cottle und Nick Collins, mit einem Vorwort von James McCartney (dem Schöpfer von SuperCollider), ist *The SuperCollider Book* das Standardwerk zur Sprache: Tutorials für Einsteiger, fortgeschrittene Kapitel zu Patterns, Live Coding, Microsound, Verräumlichung, Stimmungen und maschinellem Hören sowie ein Blick ins Innere von Sprache und Server. Die zweite Auflage (MIT Press, 2025) aktualisiert alles für SuperCollider 3.13 und ergänzt neue Kapitel.',
-  disclaimer: [
-    'SuperCollider Lab ist ein unabhängiges, nicht kommerzielles Bildungsprojekt von Buenos Aires Front · U-MA. Es ist **weder verbunden mit noch gesponsert oder gebilligt von** MIT Press, den Herausgebern und Autor:innen von *The SuperCollider Book* oder dem SuperCollider-Projekt.',
-    'Das Buch diente als **Referenz** für den Aufbau des Lehrplans. Zitate sind **kurz, wörtlich und mit Quellenangabe** (Autor:in, Kapitel und Auflage) und dienen Lehre, Kommentar und Kritik im Rahmen des Zitatrechts und des Fair Use. Die Übersetzungen der Zitate sind eigene, freie Übersetzungen. Alle Rechte am Buch liegen bei MIT Press und seinen Autor:innen.',
-    'Erklärungen, Codebeispiele, Übungen und die Audio-Engine dieser Anwendung sind **eigenständig**. Es werden keine Kapitel, Abbildungen oder Listings aus dem Buch wiedergegeben, und dieses Werkzeug **ersetzt nicht** dessen Lektüre.',
-    'Die Nutzung von SuperCollider Lab **setzt nicht voraus**, dass man das Buch gelesen hat, und bedeutet nicht, dass dessen Autor:innen diese Inhalte prüfen oder unterstützen. Etwaige Fehler sind unsere eigenen.',
-    'Wenn dir dieses Material hilft, **kauf das Buch**: Es ist der beste Weg, die Menschen zu unterstützen, die es geschrieben haben, und alles zu vertiefen, was hier nur angerissen wird. Die Kauflinks findest du oben.',
-    'Bist du Rechteinhaber:in und möchtest, dass wir ein Zitat ändern oder entfernen, schreib uns auf Instagram (@buenos.aires.front) oder eröffne ein Issue im GitHub-Repository – wir kümmern uns sofort darum.',
-  ],
-  how: [
-    'Der Kurs folgt dem Weg, den das Buch selbst Einsteigern empfiehlt: das Tutorial in Kapitel 1, UGens in Kapitel 2, Komposition in Kapitel 3 sowie Ein- und Ausgänge in Kapitel 4. Danach folgen Themen aus den fortgeschrittenen und praktischen Teilen.',
-    'Jede Lektion nennt die zugehörigen Kapitel, damit du weiterlesen kannst. Die Übersicht unten zeigt, welche Lektionen auf welchem Kapitel aufbauen.',
-    'Der offizielle Code zum Buch (für Desktop-SuperCollider) wird von der Community auf GitHub veröffentlicht. Diese App implementiert eine Teilmenge von SuperCollider im Browser: Manche Beispiele aus dem Buch laufen unverändert, andere brauchen die Desktopversion (Buffer, GUI, OSC, NRT, Plug-ins).',
-  ],
 },
 };
 })();

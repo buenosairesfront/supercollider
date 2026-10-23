@@ -15,7 +15,7 @@ js/editor.js           editor con resaltado y atajos del IDE
 js/viz.js              monitor: scope/FFT/XY/sonograma, medidores, grafo de UGens, árbol de nodos, eventos, plots, post window
 js/labs.js             los 10 laboratorios
 js/app.js              rutas, páginas, progreso, quizzes, desafíos, ajustes
-content/course.js      estructura del curso: módulos, lecciones, código, checks, citas, consejos, referencia, ejemplos
+content/course.js      estructura del curso: módulos, lecciones, código, checks, consejos, referencia, ejemplos
 content/<lang>.js      textos de la interfaz y del curso (es, en, de, zh, ja, hi)
 sw.js, manifest.webmanifest, icons/   PWA
 tests/                 harness en Node, test de todo el código del curso, chequeo de idiomas

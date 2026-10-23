@@ -1,5 +1,5 @@
 /* SuperCollider Lab · U-MA — service worker: works offline after the first visit */
-const CACHE = 'sclab-1.0';
+const CACHE = 'sclab-1.1';
 const FILES = [
   './', 'index.html', 'css/app.css', 'icon.svg', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png',
   'js/dsp.js', 'js/worklet.js', 'js/lang.js', 'js/sclib.js', 'js/patterns.js', 'js/engine.js', 'js/editor.js', 'js/viz.js', 'js/labs.js', 'js/app.js',

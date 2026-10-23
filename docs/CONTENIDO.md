@@ -5,7 +5,7 @@
 1. En `content/course.js`, dentro del módulo, agregá:
 
 ```js
-L('l31', { min: 12, ch: [16], quote: 'micro',
+L('l31', { min: 12,
   cells: { c1: '{ SinOsc.ar(440) * 0.1 }.play;' },
   quiz: { answer: 2 },              // índice (0–3) de la opción correcta
   challenge: { starter: '// ...\n', checks: [{ ugen: 'SinOsc' }, { sound: true }] },
@@ -33,10 +33,6 @@ L('l31', { min: 12, ch: [16], quote: 'micro',
 | `{ busOut: true }` | se escribió en un bus privado |
 | `{ midi: true }` | hay un MIDIdef activo |
 | `{ ndefVersions: n }` | un Ndef fue definido n veces |
-
-## Una cita
-
-Agregala en `quotes` de `course.js` (texto textual, breve, autor y capítulo) y su traducción libre en `quotes` de cada idioma salvo inglés. Usala en un cuerpo con `[[q:clave]]` o con `quote: 'clave'` en la lección. Mantené las citas cortas y siempre atribuidas.
 
 ## Un consejo
 

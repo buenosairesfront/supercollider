@@ -37,7 +37,7 @@ https://buenosairesfront.github.io/supercollider/?lang=ja
 https://buenosairesfront.github.io/supercollider/?lang=hi
 ```
 
-También se puede enlazar directo a una sección: `#/course`, `#/labs`, `#/free`, `#/ref`, `#/tips`, `#/book`, una lección (`#/l/l08`) o un laboratorio (`#/lab/fm`).
+También se puede enlazar directo a una sección: `#/course`, `#/labs`, `#/free`, `#/ref`, `#/tips`, `#/res`, una lección (`#/l/l08`) o un laboratorio (`#/lab/fm`).
 
 ## Instagram
 

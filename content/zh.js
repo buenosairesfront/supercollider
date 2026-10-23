@@ -3,20 +3,21 @@
 const R = String.raw;
 (window.SC_LANG = window.SC_LANG || {}).zh = {
 ui: {
-  nav_home: '首页', nav_course: '课程', nav_labs: '实验室', nav_free: '自由编程', nav_ref: '参考', nav_tips: '技巧', nav_book: '书籍',
+  nav_res: '资源', res_title: '资源', res_intro: '继续学习桌面版 SuperCollider：官方网站、文档、论坛和源代码。全部免费开放。', res_site: '官方网站与下载', res_site_d: '适用于 Windows、macOS 和 Linux 的 SuperCollider，免费且开源。', res_docs: '官方文档', res_docs_d: '所有类与 UGen 的帮助文档，与 IDE 自带的相同。', res_tut: '官方教程', res_tut_d: '«Getting Started With SuperCollider»，文档中的入门教程。', res_forum: '社区论坛', res_forum_d: 'scsynth.org：提问、项目与新闻。', res_sccode: 'sccode.org', res_sccode_d: '社区分享的代码，可以学习和演奏。', res_src: '源代码', res_src_d: 'GitHub 上的 SuperCollider 仓库。',
+  nav_home: '首页', nav_course: '课程', nav_labs: '实验室', nav_free: '自由编程', nav_ref: '参考', nav_tips: '技巧', 
   tagline: '在浏览器中学习 SuperCollider · U-MA',
   hero_1: 'SuperCollider', hero_2: '就在浏览器里',
   hero_lead: '一套完整的声音合成与音乐编程课程，配有实时音频引擎。写下 SuperCollider 代码、运行它，并看着它发声：示波器、频谱、UGen 图和时间线。无需安装任何东西。',
   start: '开始', continue: '继续', level: '等级', lessons: '课', streak: '连续', days: '天', modules: '个模块', module: '模块',
   try_now: '立即试试', try_title: '你的第一个声音', try_note: '点击 ▶，或把光标放在代码里按 Ctrl + Enter（Mac 上为 Cmd + Enter）。停止：Ctrl + . 或 STOP 按钮。',
-  course_map: '课程地图', tip_day: '今日技巧', all_tips: '全部技巧', reference_book: '参考书',
-  book_short: '本课程以 *The SuperCollider Book*（第二版，MIT Press）为参考。我们出于教育目的引用其中的简短段落。如果这本书对你有帮助，请购买一本：这是支持作者的最好方式。',
-  book_read_more: '关于本书与法律声明', buy_book: '购买本书', book_code: '本书官方代码',
+  course_map: '课程地图', tip_day: '今日技巧', all_tips: '全部技巧', 
+  
+  
   badges: '徽章', badge_new: '新徽章', badge_sound: '第一个声音', badge_labs: '全部实验室', badge_chall: '10 个挑战', badge_quiz: '全部测验',
   levelup: '等级 {n}：{title}', lesson_done: '本课完成', completed: '已完成', mark_done: '标记为完成',
-  course_intro: '七个模块，从你的第一行代码一直到机器聆听。每课都有可编辑、可运行的示例、一道测验和一个自动检查的挑战。顺序遵循本书为初学者推荐的路线：入门教程、UGen、作曲、输入与输出，然后是进阶主题。',
-  book_ch: '本书 第', example: '示例', run: '运行', reset: '还原', copy: '复制', copied: '已复制', open_free: '在自由编程中打开',
-  pro_tip: '专业技巧', from_book: '书中摘录', free_tr: '意译', book_more: '关于本书',
+  course_intro: '七个模块，从你的第一行代码一直到机器聆听。每课都有可编辑、可运行的示例、一道测验和一个自动检查的挑战。从模块 1 开始按顺序学习，或直接跳到你感兴趣的主题。',
+  example: '示例', run: '运行', reset: '还原', copy: '复制', copied: '已复制', open_free: '在自由编程中打开',
+  pro_tip: '专业技巧', 
   quiz: '小测验', challenge: '挑战', passed: '已通过', your_code: '你的代码', criteria: '检查项', hint: '提示', challenge_ok: '挑战通过！',
   at_line: '第', col: '列', stopped: '已全部停止', rec_saved: '录音已保存（{s} 秒，WAV）',
   mon_graph: 'UGen 图', mon_tree: '节点树', mon_timeline: '事件', mon_post: 'Post window', clear: '清空',
@@ -35,12 +36,12 @@ ui: {
   cat_osc: '振荡器', cat_noise: '噪声与混沌', cat_filter: '滤波器与共振器', cat_delay: '延迟、混响与反馈', cat_env: '包络', cat_trig: '服务器端触发与随机', cat_demand: 'Demand', cat_io: '输入、输出与声像', cat_analysis: '分析与动态', cat_grain: '颗粒', cat_lang: '语言、Pattern 与 JITLib',
   tips_title: '技巧', tips_intro: '每天使用 SuperCollider 的人们在实践中学到的经验：听力安全、调试、性能、风格、混音与现场编程。',
   tcat_safe: '安全', tcat_debug: '调试', tcat_perf: '性能', tcat_style: '风格', tcat_mix: '混音', tcat_live: '现场编程', tcat_time: '时间', tcat_synth: '合成',
-  disclaimer: '法律声明', how_used: '我们如何使用这本书', quotes_used: '课程中使用的引文', chapter_map: '章节 ↔ 课程对照', chapter: '第',
+  
   settings: '设置', language: '语言', theme: '主题', th_system: '跟随系统', th_light: '浅色', th_dark: '深色', audio: '音频', volume: '总音量', limiter: '听力保护：将输出限制在 0 dBFS',
   safety_note: '请从低音量开始，慢慢调高。戴耳机时更要注意。', progress: '进度', export: '导出', import: '导入', reset_progress: '清除进度', progress_note: '进度、经验值和你的文件都保存在此浏览器中。导出后可转移到其他设备。', imported: '进度已导入', bad_file: '该文件不是 SuperCollider Lab 的进度文件。', shortcuts: '快捷键', close: '关闭',
   post_hello: '写下代码并按 Ctrl + Enter 运行。第一个声音会启动服务器。',
   footer_1: '**SuperCollider Lab** 是 **Buenos Aires Front · U-MA** 推出的教育工具。它在你的浏览器中运行：一个用 JavaScript 编写的 sclang 子集解释器，以及一个基于 Web Audio 的 scsynth 风格合成引擎。SuperCollider 是自由软件（GPL），由 James McCartney 创建，并由社区维护：[supercollider.github.io](https://supercollider.github.io)。',
-  footer_disc: '独立项目，与 MIT Press、*The SuperCollider Book* 的作者以及 SuperCollider 项目均无关联。书中引文均为简短引用，注明出处，仅用于教育目的。[阅读完整法律声明](#/book)。',
+  footer_disc: '独立的教育项目，与 SuperCollider 项目无关联。讲解、示例和音频引擎均为原创。',
   err_gui: '网页版不支持 SuperCollider 的 GUI 类（Window、Slider…）。试试实验室：它们是会写代码的控制面板。',
   err_buf: '此网页版不支持缓冲区（Buffer）和加载音频文件：一切都实时合成，无需加载任何东西。',
   err_osc: '浏览器中无法使用 OSC（NetAddr、OSCdef）。请用 MIDIdef 配合 MIDI 键盘或屏幕键盘。',
@@ -79,9 +80,7 @@ l01: { t: '你好，SuperCollider', s: '客户端与服务器、post window，�
 
 停止声音的通用快捷键是 **Ctrl + .**（Mac 上为 Cmd + .）。也可以使用 STOP 按钮，或释放服务器上的所有节点：
 
-[[c4]]
-
-[[q:intro]]`,
+[[c4]]`,
   quiz: { q: '两个程序中，哪一个负责产生声音？', o: ['sclang，解释器', 'scsynth，合成服务器', 'Post window', '代码编辑器'], e: '语言（sclang）负责描述与发送；服务器（scsynth）计算音频采样。因此服务器可以在另一台机器上运行，或者像这里一样运行在浏览器中。' },
   ch: { task: '播放一个 **220 Hz**、振幅 **0.1** 的正弦波。运行你的代码，结束后用 Ctrl + . 停止。', checks: ['使用 «SinOsc»', '频率为 220', '有声音'], hint: '复制示例 3，把 440 改成 220。' } },
 l02: { t: '消息、参数与嵌套', s: '接收者.消息(参数)，以及如何串联想法。',
@@ -106,9 +105,7 @@ l02: { t: '消息、参数与嵌套', s: '接收者.消息(参数)，以及如�
 
 计算机并不会产生真正的随机。如果设定一个**种子**，得到的序列总是相同：便于重现生成式作品的某个版本。
 
-[[c5]]
-
-[[q:cottle_goal]]`,
+[[c5]]`,
   quiz: { q: '在 «round(exprand(1, 10), 0.1)» 中，谁接收 «round» 消息？', o: ['数字 0.1', '数字 1', '«exprand(1, 10)» 的结果', '数字 10'], e: '函数式写法的第一个参数就是接收者：等价于 «exprand(1, 10).round(0.1)»。' },
   ch: { task: '生成一个包含 **8 个 48 到 72 之间随机 MIDI 音符**的数组，从小到大排序。代码的最后一个表达式必须是这个数组。', checks: ['有 8 个元素', '全部在 48 到 72 之间', '已排序'], hint: '试试 «{ rrand(48, 72) } ! 8»，再发送 «sort»。' } },
 l03: { t: '变量、函数与优先级', s: '保存值、定义行为、从左到右阅读。',
@@ -131,9 +128,7 @@ l03: { t: '变量、函数与优先级', s: '保存值、定义行为、从左�
 
 [[c4]]
 
-!! 如果看到 «Variable 'x' not defined»，说明需要用 «var» 声明它，或改用 «~x»。这是初学者最常见的错误。
-
-[[q:cottle_panic]]`,
+!! 如果看到 «Variable 'x' not defined»，说明需要用 «var» 声明它，或改用 «~x»。这是初学者最常见的错误。`,
   quiz: { q: '在 SuperCollider 中 «5 + 2 * 3» 等于多少？', o: ['11', '13', '30', '21'], e: '从左到右求值：(5 + 2) = 7，7 * 3 = 21。要得到 11，请写 «5 + (2 * 3)»。' },
   ch: { task: '写一个函数 «~mtof»：输入 MIDI 音符，返回以 Hz 为单位的频率。«~mtof.(69)» 必须得到 440。', checks: ['«~mtof.(69)» 得到 440', '«~mtof.(81)» 得到 880'], hint: '数字能理解 «midicps»。在函数里写：«note.midicps»。' } },
 l04: { t: '数组与集合', s: '值的列表、变换，以及一个十二音矩阵。',
@@ -181,9 +176,7 @@ l05: { t: '你的第一个声音：UGen 与 .play', s: '单元发生器、参数
 
 [[c6]]
 
-!! 音频信号的范围是 -1 到 1。如果叠加多个信号或让 mul 大于 1，就会削波。保持较低的振幅（0.1 到 0.3），叠加时要小心。
-
-[[q:parmenter_ugen]]`,
+!! 音频信号的范围是 -1 到 1。如果叠加多个信号或让 mul 大于 1，就会削波。保持较低的振幅（0.1 到 0.3），叠加时要小心。`,
   quiz: { q: 'UGen 的 «mul» 参数有什么作用？', o: ['改变频率', '乘以输出（缩放振幅）', '加上一个常数', '重复声音'], e: 'mul 缩放信号，add 偏移信号。两者结合，振荡器就能控制任意范围的值。' },
   ch: { task: '播放一个 **330 Hz**、振幅 **0.15** 的正弦波。', checks: ['使用 «SinOsc»', '频率为 330', '有声音'], hint: '«{ SinOsc.ar(330, 0, 0.15) }.play»，或使用关键字参数。' } },
 l06: { t: '振荡器与噪声', s: '波形、谐波与噪声的颜色。',
@@ -292,8 +285,6 @@ l10: { t: '多声道扩展与立体声', s: '用数组作参数会复制整个�
 
 [[c2]]
 
-[[q:cottle_magic]]
-
 «Pan2» 把单声道信号放到立体声场中（-1 左，1 右）。«Splay» 把多个声部分布在左右之间。«Mix» 把一组声道相加成一个。试试示波器的 **X/Y** 模式来观察立体声像。
 
 [[c3]]
@@ -389,9 +380,7 @@ l14: { t: '效果器：延迟、混响与失真', s: '回声、空间、饱和�
   ch: { task: '干声 + «CombN» 回声 + «FreeVerb» 混响。', checks: ['使用 «CombN»', '使用 «FreeVerb»', '有声音'], hint: '把信号和它的回声相加，再一起送进 FreeVerb。' } },
 l15: { t: '微声与颗粒合成', s: '由粒子构成的声音。',
   cells: { c1: '规则的颗粒', c2: '颗粒云', c3: '把颗粒写成 SynthDef', c4: '颗粒雨' },
-  body: R`[[q:micro]]
-
-**颗粒**是一个非常短的声音（1 到 100 毫秒），带有平滑的包络。每秒成千上万个颗粒可以形成质感、声云，以及其他方法无法实现的变换。颗粒极短时，音高会消失，变成带有色彩的咔嗒声。
+  body: R`**颗粒**是一个非常短的声音（1 到 100 毫秒），带有平滑的包络。每秒成千上万个颗粒可以形成质感、声云，以及其他方法无法实现的变换。颗粒极短时，音高会消失，变成带有色彩的咔嗒声。
 
 [[c1]]
 
@@ -410,9 +399,7 @@ l15: { t: '微声与颗粒合成', s: '由粒子构成的声音。',
   ch: { task: '一片**颗粒云**：由 «Dust» 触发的 «GrainSin»。', checks: ['使用 «GrainSin»', '使用 «Dust»', '有声音'], hint: '参考示例 2，修改范围。' } },
 l16: { t: '非标准合成与混沌', s: '克塞纳基斯、混沌映射，以及作为声源的算法。',
   cells: { c1: 'Gendy1', c2: '鼠标控制 Gendy1', c3: 'Crackle', c4: 'Logistic 映射', c5: 'Hénon 映射' },
-  body: R`[[q:stoch]]
-
-**非标准**合成不是从声学出发，而是从过程出发：数字、随机、混沌。**Gendy1** 实现了伊阿尼斯·克塞纳基斯（Iannis Xenakis）的动态随机合成：波形由沿着随机游走移动的点构成。
+  body: R`**非标准**合成不是从声学出发，而是从过程出发：数字、随机、混沌。**Gendy1** 实现了伊阿尼斯·克塞纳基斯（Iannis Xenakis）的动态随机合成：波形由沿着随机游走移动的点构成。
 
 [[c1]]
 
@@ -432,8 +419,6 @@ l16: { t: '非标准合成与混沌', s: '克塞纳基斯、混沌映射，以�
 l17: { t: 'SynthDef 与 Synth', s: '定义一次，演奏多次。',
   cells: { c1: '定义', c2: '演奏', c3: '带 gate 的铺底音色', c4: '创建', c5: '修改', c6: '释放' },
   body: R`每次写 «{ }.play»，SuperCollider 都会编译一个新乐器。对于要反复使用的乐器，最好定义一个 **SynthDef**：服务器保存的一份有名字的配方。然后从它创建 **Synth**（实例），每个都有自己的参数值。
-
-[[q:parmenter_synthdef]]
 
 函数的参数会变成**控制量**，可以在创建 synth 时设定，也可以在发声时修改。按惯例会包含 «out» 来选择输出总线，并用 «Out.ar» 显式写出输出。
 
@@ -494,9 +479,7 @@ l19: { t: 'Demand UGen', s: '在服务器内部运行的序列。',
   ch: { task: '用 «Demand» 和 «Dseq» 在服务器上编排一段旋律。', checks: ['使用 «Demand»', '使用 «Dseq»', '有声音'], hint: '从示例 1 开始，修改音符。' } },
 l20: { t: '输入与输出', s: 'MIDI、鼠标、麦克风与录音。',
   cells: { c1: '一个 MIDIdef', c2: '连接 MIDI', c3: '鼠标按键', c4: '麦克风', c5: '录音' },
-  body: R`[[q:ins]]
-
-用 **MIDIdef** 可以注册一个响应 MIDI 消息的函数。这里每个音符都会触发一个 synth。运行示例后，弹奏屏幕键盘（或电脑键盘）：
+  body: R`用 **MIDIdef** 可以注册一个响应 MIDI 消息的函数。这里每个音符都会触发一个 synth。运行示例后，弹奏屏幕键盘（或电脑键盘）：
 
 [[c1]]
 
@@ -539,16 +522,12 @@ routine 也是一个**流（stream）**：每次 «next» 都让它前进到下�
 
 [[c5]]
 
-[[q:wilson_ways]]
-
 !! 没有 «wait» 的 «loop» 会阻塞解释器。本应用能检测到并以错误中止，但在桌面版 SuperCollider 中你只能重启。`,
   quiz: { q: '当 «TempoClock.default.tempo = 2» 时，«1.wait» 是多少秒？', o: ['2 秒', '1 秒', '0.5 秒', '取决于采样率'], e: 'tempo = 2 表示每秒 2 拍（120 BPM）：一拍为 0.5 秒。' },
   ch: { task: '写一个 routine，演奏**至少 8 个音符**，音符之间用 «wait» 间隔。', checks: ['使用 «wait»', '至少响起 8 个音符'], hint: '«fork { 8.do { |i| (degree: i).play; 0.25.wait } }»。' } },
 l22: { t: 'Pattern：Pbind', s: '把音乐写成规则。',
   cells: { c1: '一个音阶', c2: '节奏与随机', c3: '一个流', c4: '和弦', c5: '小调音阶' },
-  body: R`[[q:kuivila]]
-
-**Pattern** 描述一个值的序列而不执行它。«Pbind» 把键与 pattern 结合起来生成**事件**（音符）。最常用的键：«degree»（音阶级数）、«dur»（以拍为单位的时长）、«legato»、«amp»、«octave»、«scale» 和 «instrument»。
+  body: R`**Pattern** 描述一个值的序列而不执行它。«Pbind» 把键与 pattern 结合起来生成**事件**（音符）。最常用的键：«degree»（音阶级数）、«dur»（以拍为单位的时长）、«legato»、«amp»、«octave»、«scale» 和 «instrument»。
 
 [[c1]]
 
@@ -592,9 +571,7 @@ l23: { t: 'Pdef、Ppar 与自定义乐器', s: '在演奏中改变音乐。',
   ch: { task: '用 «Ppar» 同时演奏**两个声部**。', checks: ['使用 «Ppar»', '至少响起 6 个音符'], hint: '参考示例 5。' } },
 l24: { t: '算法：随机、游走与链', s: '随机作曲。',
   cells: { c1: '随机游走', c2: '加权随机', c3: '马尔可夫链', c4: '种子' },
-  body: R`[[q:stoch]]
-
-并非所有随机听起来都一样。**随机游走**（«Pbrown»）以小步前进：生成有方向感的旋律。**加权**随机（«Pwrand»）让某些选项比其他选项更可能出现。
+  body: R`并非所有随机听起来都一样。**随机游走**（«Pbrown»）以小步前进：生成有方向感的旋律。**加权**随机（«Pwrand»）让某些选项比其他选项更可能出现。
 
 [[c1]]
 
@@ -613,9 +590,7 @@ l24: { t: '算法：随机、游走与链', s: '随机作曲。',
   ch: { task: '用 «Pbrown» 写一段**游走**的旋律。', checks: ['使用 «Pbrown»', '至少响起 8 个音符'], hint: '«Pbind(\\degree, Pbrown(0, 14, 2, 16), \\dur, 0.15).play»。' } },
 l25: { t: 'JITLib：Ndef 与 ProxySpace', s: '边发声边编程。',
   cells: { c1: '一个 Ndef', c2: '交叉淡化地重新定义', c3: '参数与 set', c4: '串联代理', c5: 'ProxySpace', c6: '清理' },
-  body: R`[[q:jit]]
-
-**JITLib**（Just In Time 库）让你在程序运行时修改它。«Ndef» 是一个**代理**：一个有名字的位置，用来放置声源。重新定义它时，新声源会以 «fadeTime» 秒的**交叉淡化**替换旧的。
+  body: R`**JITLib**（Just In Time 库）让你在程序运行时修改它。«Ndef» 是一个**代理**：一个有名字的位置，用来放置声源。重新定义它时，新声源会以 «fadeTime» 秒的**交叉淡化**替换旧的。
 
 [[c1]]
 
@@ -640,9 +615,7 @@ l25: { t: 'JITLib：Ndef 与 ProxySpace', s: '边发声边编程。',
   ch: { task: '播放一个 «Ndef»，并在它发声时**至少重新定义两次**。', checks: ['该 Ndef 有 3 个或更多版本', '有声音'], hint: '运行 «Ndef(\\x, { ... }).play»，然后修改函数内容再运行一次。' } },
 l26: { t: 'SCTweets：精简代码的艺术', s: '140 个字符的声音。',
   cells: { c1: '呼吸的和弦', c2: '房间里的水滴', c3: '三角波序列', c4: '口袋里的克塞纳基斯' },
-  body: R`[[q:tweets]]
-
-2009 年，SuperCollider 社区开始分享能装进一条推文的完整作品：**140 个字符**。**SCTweets** 是一种游戏，也是一所学校：它迫使你深入理解多声道扩展、语法捷径，以及那些"以少胜多"的 UGen。
+  body: R`2009 年，SuperCollider 社区开始分享能装进一条推文的完整作品：**140 个字符**。**SCTweets** 是一种游戏，也是一所学校：它迫使你深入理解多声道扩展、语法捷径，以及那些"以少胜多"的 UGen。
 
 一些技巧：用 «play{ }» 代替 «{ }.play»，用 «!8» 复制声部，用 «(1..8)» 写序列，单字母变量，不留空格。
 
@@ -659,9 +632,7 @@ l26: { t: 'SCTweets：精简代码的艺术', s: '140 个字符的声音。',
   ch: { task: '你的 **SCTweet**：一段能发声的作品，**不超过 140 个字符**。', checks: ['不超过 140 个字符', '有声音'], hint: '从一个示例开始并简化。«play{Splay.ar(SinOsc.ar((1..5)*99,0,0.1))}» 有 41 个字符。' } },
 l27: { t: '非常规调律', s: '十二平均律、纯律以及其他八度划分。',
   cells: { c1: '平均律和弦', c2: '纯律和弦', c3: '纯律音阶', c4: '19-EDO', c5: '日本音阶' },
-  body: R`[[q:tuning]]
-
-钢琴使用十二音**平均律**（12-TET）：每个半音是 2 的 12 次方根。这是一种折中：除八度外，没有哪个音程在声学上是纯的。**纯律**使用整数比（3/2、5/4……）。听听这两个大三和弦的区别：纯律和弦没有拍音。
+  body: R`钢琴使用十二音**平均律**（12-TET）：每个半音是 2 的 12 次方根。这是一种折中：除八度外，没有哪个音程在声学上是纯的。**纯律**使用整数比（3/2、5/4……）。听听这两个大三和弦的区别：纯律和弦没有拍音。
 
 [[c1]]
 
@@ -675,16 +646,14 @@ l27: { t: '非常规调律', s: '十二平均律、纯律以及其他八度划�
 
 [[c4]]
 
-SuperCollider 自带许多传统的音阶。本书第 22 章专门介绍日本的 SuperCollider 圈；这里是两种日本五声音阶：
+SuperCollider 自带许多音乐传统的音阶，包括日本、中国和印度的音阶。这里是两种日本五声音阶：
 
 [[c5]]`,
   quiz: { q: '纯五度对应哪个频率比？', o: ['5/4', '3/2', '4/3', '2/1'], e: '3/2 是纯五度；5/4 是大三度；4/3 是纯四度；2/1 是八度。' },
   ch: { task: '用一种**不是** 12-TET 的调律演奏一段旋律（纯律、毕达哥拉斯律或其他 «stepsPerOctave»）。', checks: ['使用其他调律', '至少响起 5 个音符'], hint: '参考示例 3 和 4。' } },
 l28: { t: '数据可听化', s: '聆听数字。',
   cells: { c1: '数据映射到音高', c2: '多个维度', c3: '连续可听化' },
-  body: R`[[q:sonif]]
-
-**可听化**是把数据系统地转换为声音以便聆听：趋势、异常、节奏。基本技术是**参数映射**：数据的每个维度控制声音的一个维度（音高、时间、响度、声像、音色）。
+  body: R`**可听化**是把数据系统地转换为声音以便聆听：趋势、异常、节奏。基本技术是**参数映射**：数据的每个维度控制声音的一个维度（音高、时间、响度、声像、音色）。
 
 «linlin» 和 «linexp» 把一个范围转换到另一个范围。音高请用 «linexp»，因为我们以对数方式感知频率。
 
@@ -701,9 +670,7 @@ l28: { t: '数据可听化', s: '聆听数字。',
   ch: { task: '用 «linlin» 或 «linexp» 把**至少 10 个值**的数组可听化。', checks: ['使用 linlin、linexp 或 explin', '至少响起 10 个音符'], hint: '自己编一些数据，或使用示例 1 中的 «~data»。' } },
 l29: { t: '空间化', s: '放置与移动声音。',
   cells: { c1: '移动的声像', c2: '距离', c3: '多普勒效应', c4: '立体声宽度' },
-  body: R`[[q:space]]
-
-在立体声中，左右位置由两个声道的电平差控制（«Pan2»）。打开示波器的 **X/Y** 模式：你会看到声像在移动。
+  body: R`在立体声中，左右位置由两个声道的电平差控制（«Pan2»）。打开示波器的 **X/Y** 模式：你会看到声像在移动。
 
 [[c1]]
 
@@ -724,9 +691,7 @@ l29: { t: '空间化', s: '放置与移动声音。',
   ch: { task: '用 «Pan2» 和一个 LFO 让声音在立体声场中移动。', checks: ['使用 «Pan2»', '使用 LFO', '有声音'], hint: '«Pan2.ar(声源, SinOsc.kr(0.3))»。' } },
 l30: { t: '机器聆听', s: '让计算机去听。',
   cells: { c1: '包络跟随器', c2: '音高跟踪', c3: '使用麦克风' },
-  body: R`[[q:ml]]
-
-**机器聆听**从信号中提取信息：有多少能量（«Amplitude»）、什么音高（«Pitch»）、一次敲击何时开始。有了这些，系统就能对演奏者作出反应：伴奏、模仿、回应。
+  body: R`**机器聆听**从信号中提取信息：有多少能量（«Amplitude»）、什么音高（«Pitch»）、一次敲击何时开始。有了这些，系统就能对演奏者作出反应：伴奏、模仿、回应。
 
 [[c1]]
 
@@ -738,31 +703,9 @@ l30: { t: '机器聆听', s: '让计算机去听。',
 
 [[c3]]
 
-!! 本书用整章介绍 SuperCollider 中的机器聆听与机器学习（第 15 章和第 25 章）。这只是第一步。`,
+!! 桌面版 SuperCollider 还有更多基于 FFT 的分析工具（例如 Onsets 和 MFCC）。这只是第一步。`,
   quiz: { q: '«Amplitude.kr(信号)» 测量的是什么？', o: ['信号的振幅包络', '频率', '谐波数量', '立体声位置'], e: '它是一个起音和释放时间可调的包络跟随器。' },
   ch: { task: '用 «Amplitude» 让一个声音对另一个声音作出反应。', checks: ['使用 «Amplitude»', '有声音'], hint: '参考示例 1：鼓的振幅推动滤波器。' } },
-},
-quotes: {
-  mccartney: 'SuperCollider 是一种用来描述声音过程的语言。',
-  mccartney2: 'SuperCollider 的核心思想，是用算法组合对象，以创造生成声音的过程。',
-  intro: '你可以一点一点地学，以至于几乎察觉不到自己在编程，等发现时已经太晚了——你已经着迷了！',
-  safety: '我们建议每个示例都从把音量调到最低开始，然后慢慢提高到舒适的水平。',
-  cottle_goal: '目标是尽快得到有趣的声音。',
-  cottle_panic: '别慌。本章旨在拓展边界，为后面的讨论做好准备。',
-  cottle_magic: '数组有很多用途，但多声道扩展近乎魔法。',
-  parmenter_ugen: 'SuperCollider 中的 UGen 提供了一个高效的模块化系统，用于构建复杂的音频网络。',
-  parmenter_synthdef: '所有的合成都在服务器上完成，而且总会创建一个 SynthDef。',
-  wilson_ways: 'SC 并不向用户呈现单一的"首选"工作方式。',
-  ins: '有时仅靠 SuperCollider 还不够，你会想从外部设备或其他程序获取输入。',
-  kuivila: 'Pattern 类似于乐谱：它们是序列的抽象表示，独立于任何具体的演奏。',
-  jit: '与其事先规划并提供大量参数，我们可以在运行时修改程序本身。',
-  sonif: '可听化让听不见的东西变得可以听见。',
-  space: '"空间声音"这个概念是同义反复，因为声音本身就是一种空间现象。',
-  ml: '机器聆听是机器模拟人类听觉与音乐能力的能力。',
-  micro: '用微小粒子来创作音乐和声音的想法，一直是科学与艺术研究中引人入胜的领域。',
-  tuning: '音频编程语言改变了另类音高体系的创作、演奏与欣赏。',
-  stoch: '任何算法都可以成为声音合成与算法作曲的原始素材。',
-  tweets: '在其中，你能找到持续音、完整的作品、极简主义作品、舞曲，以及种类繁多的噪声与随机过程。',
 },
 tips: [
   { t: '调低总音量', b: '实验前把总音量设为 -12 dB 或更低。可以用 «s.volume» 或在 ⚙ 中修改。' },
@@ -815,22 +758,6 @@ labs: {
   tune: { t: '调律', d: '把八度分成 N 份，并与纯律音程比较。', tip: '12、19、31 和 53 EDO 都非常接近纯律音程。比较这三个和弦。' },
   fx: { t: '效果链', d: '对不同声源施加饱和、回声、滤波与混响。', tip: '顺序很重要：在回声之前饱和与之后饱和听起来不一样。在代码里试试。' },
   chaos: { t: '混沌与非标准合成', d: 'Gendy1、混沌映射与阶梯噪声。', tip: '慢慢提高混沌度：有的区域声音会变得有序，有的区域则会爆发。' },
-},
-book: {
-  about: '*The SuperCollider Book* 由 Scott Wilson、David Cottle 和 Nick Collins 主编，SuperCollider 的创造者 James McCartney 作序，是关于这门语言的权威著作：既有面向初学者的教程，也有关于 pattern、现场编程、微声、空间化、调律和机器聆听的进阶章节，还深入介绍了语言与服务器的内部机制。第二版（MIT Press，2025）将全部内容更新至 SuperCollider 3.13，并新增了多个章节。',
-  disclaimer: [
-    'SuperCollider Lab 是 Buenos Aires Front · U-MA 推出的独立、非营利教育项目。它与 MIT Press、*The SuperCollider Book* 的编者和作者以及 SuperCollider 项目**均无关联，也未获得其赞助或认可**。',
-    '本书被用作组织课程大纲的**参考**。引文均**简短、逐字并注明出处**（作者、章节与版次），在引用权与合理使用的范围内用于教学、评论与批评。引文的中文为我们自己的意译。本书的一切权利归 MIT Press 及其作者所有。',
-    '本应用的讲解、代码示例、练习和音频引擎均为**原创**。没有复制书中的章节、图表或代码清单，本工具**不能替代**阅读原书。',
-    '使用 SuperCollider Lab **并不意味着**你读过这本书，也不意味着其作者审阅或认可这些内容。如有错误，责任在我们。',
-    '如果这些材料对你有用，**请购买这本书**：这是支持作者、深入学习这里仅作介绍的内容的最好方式。购买链接在上方。',
-    '如果你是权利人，希望我们修改或删除某段引文，请通过 Instagram（@buenos.aires.front）联系我们，或在 GitHub 仓库提交 issue，我们会立即处理。',
-  ],
-  how: [
-    '本课程沿用了书中为初学者推荐的路线：第 1 章的入门教程、第 2 章的 UGen、第 3 章的作曲以及第 4 章的输入与输出。随后是进阶与实践部分的主题。',
-    '每一课都列出了相关章节，方便你继续阅读。下方的对照表展示了每一章支撑了哪些课程。',
-    '本书的官方代码（适用于桌面版 SuperCollider）由社区发布在 GitHub 上。本应用在浏览器中实现了 SuperCollider 的一个子集：书中有些示例可以直接运行，另一些则需要桌面版（缓冲区、GUI、OSC、NRT、插件）。',
-  ],
 },
 };
 })();

@@ -10,13 +10,13 @@ Empezá con el volumen bajo. La salida está recortada a 0 dBFS (⚙ → protecc
 
 ## Las secciones
 
-- **Inicio**: tu progreso (XP, nivel, lecciones, racha), el mapa del curso, el consejo del día, el libro de referencia e insignias.
-- **Curso**: 7 módulos y 30 lecciones. Cada lección tiene ejemplos ejecutables, cita del libro, consejo, quiz y desafío. Las estrellas indican: ejecutaste un ejemplo, respondiste el quiz, superaste el desafío.
+- **Inicio**: tu progreso (XP, nivel, lecciones, racha), el mapa del curso, el consejo del día, los recursos e insignias.
+- **Curso**: 7 módulos y 30 lecciones. Cada lección tiene ejemplos ejecutables, consejo, quiz y desafío. Las estrellas indican: ejecutaste un ejemplo, respondiste el quiz, superaste el desafío.
 - **Laboratorio**: 10 superficies de control. Mové los controles y mirá cómo cambia el código; ▶ Tocar ejecuta, ■ Parar detiene, ⧉ lleva el código a Código libre.
 - **Código libre**: tus archivos (se guardan solos en el navegador), ejemplos listos, ejecutar bloque o todo, grabar a WAV y descargar `.scd`.
 - **Referencia**: buscador de clases y UGens con firma, descripción, botón ▶ Probar y enlaces a las lecciones que los usan. **Ctrl + D** sobre una palabra en cualquier editor la abre acá. Clic en un nodo del grafo de UGens también.
 - **Consejos**: 24 tarjetas por categoría.
-- **Libro**: información de *The SuperCollider Book*, aviso legal, enlaces de compra, todas las citas usadas y el mapa capítulo ↔ lección.
+- **Recursos**: enlaces al sitio oficial, la documentación, el tutorial de inicio, el foro, sccode.org y el código fuente de SuperCollider.
 
 ## El monitor (columna derecha; abajo en el celular)
 

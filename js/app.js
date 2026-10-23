@@ -3,7 +3,7 @@
  */
 (function (G) {
 'use strict';
-const VERSION = '1.0';
+const VERSION = '1.1';
 const LANGS = ['es', 'en', 'de', 'zh', 'ja', 'hi'];
 const LANG_NAMES = { es: 'Español', en: 'English', de: 'Deutsch', zh: '中文', ja: '日本語', hi: 'हिन्दी' };
 const DOC_LANG = { es: 'es', en: 'en', de: 'de', zh: 'zh-Hans', ja: 'ja', hi: 'hi' };
@@ -12,9 +12,14 @@ const C = G.SC_COURSE;
 const E = G.SCEngine, V = G.SCViz, L = G.SCLang, LIB = G.SCLib;
 const REPO = 'https://github.com/buenosairesfront/supercollider';
 const IG = 'https://www.instagram.com/buenos.aires.front/';
-const BUY = 'https://mitpressbookstore.mit.edu/book/9780262049702';
-const PUBLISHER = 'https://mitpress.mit.edu/9780262049702/the-supercollider-book/';
-const BOOKCODE = 'https://github.com/supercollider/scbookcode';
+const RESOURCES = [
+  ['site', 'https://supercollider.github.io/', 'mag'],
+  ['docs', 'https://doc.sccode.org/', 'cya'],
+  ['tut', 'https://doc.sccode.org/Tutorials/Getting-Started/00-Getting-Started-With-SC.html', 'yel'],
+  ['forum', 'https://scsynth.org/', 'mag'],
+  ['sccode', 'https://sccode.org/', 'cya'],
+  ['src', 'https://github.com/supercollider/supercollider', 'yel'],
+];
 
 // ---------------------------------------------------------------- helpers
 const $ = (s, r = document) => r.querySelector(s);
@@ -205,7 +210,7 @@ function shellHTML() {
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>`;
 }
-const NAV = [['home', '#/'], ['course', '#/course'], ['labs', '#/labs'], ['free', '#/free'], ['ref', '#/ref'], ['tips', '#/tips'], ['book', '#/book']];
+const NAV = [['home', '#/'], ['course', '#/course'], ['labs', '#/labs'], ['free', '#/free'], ['ref', '#/ref'], ['tips', '#/tips'], ['res', '#/res']];
 function renderChrome() {
   document.documentElement.lang = DOC_LANG[lang];
   $('#nav').innerHTML = NAV.map(([k, href]) => `<a href="${href}" data-k="${k}">${esc(t('nav_' + k))}</a>`).join('');
@@ -247,7 +252,7 @@ function render() {
   leaveFns.forEach(f => { try { f(); } catch (e) { } }); leaveFns = [];
   const r = route(); const main = $('#main'); main.innerHTML = '';
   updateNav();
-  const pages = { home: pageHome, course: pageCourse, lesson: pageLesson, labs: pageLabs, lab: pageLab, free: pageFree, ref: pageRef, tips: pageTips, book: pageBook };
+  const pages = { home: pageHome, course: pageCourse, lesson: pageLesson, labs: pageLabs, lab: pageLab, free: pageFree, ref: pageRef, tips: pageTips, res: pageRes };
   (pages[r.name] || pageHome)(main, r);
   main.appendChild(footer());
   if (!r.keepScroll) window.scrollTo(0, 0);
@@ -263,14 +268,6 @@ function barcode(seed) {
   let x = 0; for (const c of seed) x = (x * 31 + c.charCodeAt(0)) >>> 0;
   let s = ''; let pos = 0; while (pos < 300) { x = (x * 1103515245 + 12345) >>> 0; const w = 1 + (x >> 8) % 4; if ((x >> 4) & 1) s += `<rect x="${pos}" y="0" width="${w}" height="30"/>`; pos += w + 1; }
   const d = document.createElement('div'); d.innerHTML = '<svg class="bc" viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><g fill="currentColor">' + s + '</g></svg>'; return d.firstChild;
-}
-function quoteBox(key) {
-  const q = C.quotes[key]; if (!q) return null; const tr = tx('quotes', key);
-  return h('aside', { class: 'panel p-ink callout quote' }, h('div', { class: 'in' },
-    h('div', { class: 'meta', style: 'margin-bottom:8px' }, h('span', null, t('from_book')), h('span', null, 'THE SUPERCOLLIDER BOOK · 2ND ED.')),
-    h('blockquote', { lang: 'en' }, '“' + q.text + '”'),
-    tr && lang !== 'en' ? h('div', { class: 'tr' }, t('free_tr') + ': ' + tr) : null,
-    h('cite', null, '— ' + q.who + ' · ' + q.where + ' · ', h('a', { href: '#/book' }, t('book_more')))));
 }
 function tipBox(text) { return h('aside', { class: 'panel p-yel callout' }, h('div', { class: 'in' }, h('h4', null, '◆ ' + t('pro_tip')), h('p', { html: md(text) }))); }
 
@@ -334,11 +331,11 @@ function pageHome(main) {
   const mods = h('section', { class: 'mt' }, h('div', { class: 'grid3' }, C.modules.map((m, i) => modCard(m, i))));
   main.appendChild(h('div', { class: 'lbl mt' }, t('course_map')));
   main.appendChild(mods);
-  // tip + book
+  // tip + resources
   const tips = TX().tips || FB().tips || []; const ti = Math.floor(Date.now() / 864e5) % Math.max(1, tips.length); const tp = tips[ti] || { t: '', b: '' };
   main.appendChild(h('div', { class: 'grid2 mt' },
     h('section', { class: 'panel p-yel tipc' }, h('div', { class: 'in' }, h('div', { class: 'meta' }, h('span', null, t('tip_day')), h('span', null, '#' + pad2(ti + 1))), h('h4', { style: 'margin-top:8px' }, tp.t), h('p', { html: md(tp.b) }), C.tips[ti] ? h('pre', null, C.tips[ti].code) : null, h('a', { class: 'btn sm mt', href: '#/tips', style: '--pb:var(--yel);--pf:#101010' }, t('all_tips') + ' →'))),
-    h('section', { class: 'panel p-ink' }, h('div', { class: 'in' }, h('div', { class: 'meta' }, h('span', null, t('reference_book')), h('span', null, 'MIT PRESS · 2025')), h('h3', { style: 'font:700 24px/1 var(--disp);text-transform:uppercase;margin:10px 0 8px' }, 'The SuperCollider Book'), h('p', { style: 'margin:0 0 10px;font-size:13px', html: md(t('book_short')) }), h('div', { class: 'row' }, h('a', { class: 'btn sm cya', href: '#/book' }, t('book_read_more')), h('a', { class: 'btn sm', href: BUY, target: '_blank', rel: 'noopener', style: '--pb:#000;--pf:#ECEBE6' }, t('buy_book') + ' ↗'))))));
+    h('section', { class: 'panel p-ink' }, h('div', { class: 'in' }, h('div', { class: 'meta' }, h('span', null, t('nav_res')), h('span', null, 'OPEN SOURCE · GPL')), h('h3', { style: 'font:700 24px/1 var(--disp);text-transform:uppercase;margin:10px 0 8px' }, t('res_title')), h('p', { style: 'margin:0 0 10px;font-size:13px', html: md(t('res_intro')) }), h('div', { class: 'row' }, h('a', { class: 'btn sm cya', href: '#/res' }, t('nav_res') + ' →'), h('a', { class: 'btn sm', href: RESOURCES[0][1], target: '_blank', rel: 'noopener', style: '--pb:#000;--pf:#ECEBE6' }, 'supercollider.github.io ↗'))))));
   // badges
   main.appendChild(h('div', { class: 'lbl mt' }, t('badges')));
   main.appendChild(h('div', { class: 'badges' }, BADGES().map(b => h('span', { class: 'badge p-paper' + (P.badges[b] ? ' on' : ''), title: badgeName(b), style: '--pb:var(--paper);--pf:var(--paperFg);--pa:var(--mag);--pat:#fff' }, badgeIcon(b)))));
@@ -358,7 +355,7 @@ function pageCourse(main) {
   C.modules.forEach((m, i) => {
     const T = tx('mod', m.id) || { t: m.id, d: '' };
     const sec = h('section', { class: 'panel p-paper mt', id: m.id }, h('div', { class: 'in' },
-      sheetHead({ left: t('module') + ' ' + pad2(i + 1), mid: t('book_ch') + ' ' + m.ch.join(', '), right: m.lessons.filter(l => P.lessons[l.id] && P.lessons[l.id].done).length + '/' + m.lessons.length, num: pad2(i + 1), title: T.t }),
+      sheetHead({ left: t('module') + ' ' + pad2(i + 1), mid: m.lessons.length + ' ' + t('lessons'), right: m.lessons.filter(l => P.lessons[l.id] && P.lessons[l.id].done).length + '/' + m.lessons.length, num: pad2(i + 1), title: T.t }),
       h('p', { class: 'note', style: 'margin:0 0 10px' }, T.d),
       h('ul', { class: 'lessons' }, m.lessons.map(l => {
         const LT = tx('les', l.id) || { t: l.id, s: '' }; const p = P.lessons[l.id]; const stars = lessonStars(l.id);
@@ -379,7 +376,6 @@ function pageLesson(main, r) {
   const head = h('section', { class: 'panel p-paper' }, h('div', { class: 'in' },
     sheetHead({ left: t('module') + ' ' + pad2(l.mi + 1) + ' · ' + MT.t, mid: 'ID SCL-' + pad2(l.mi + 1) + pad2(l.li + 1), right: '≈ ' + l.min + ' MIN', num: pad2(l.n), title: T.t, h1: true }),
     h('div', { class: 'row' }, T.s ? h('span', { class: 'note', style: 'margin:0;flex:1;min-width:200px' }, T.s) : null,
-      h('a', { class: 'pill', href: '#/book', title: t('book_ch') }, '📖 ' + t('book_ch') + ' ' + l.ch.join(', ')),
       h('span', { class: 'pill' }, '★'.repeat(lessonStars(l.id)) + '☆'.repeat(3 - lessonStars(l.id))))));
   main.appendChild(head);
   const body = h('section', { class: 'panel p-paper mt' }, h('div', { class: 'in prose' }));
@@ -397,13 +393,11 @@ function pageLesson(main, r) {
       if (l.kbd && /MIDIdef/.test(code)) bin.appendChild(h('div', { style: 'margin:-6px 0 14px' }, keyboard(48, 25, (note, on) => LIB.midiDispatch(on ? 'noteOn' : 'noteOff', note, on ? 100 : 0))));
       return;
     }
-    if ((m = b.match(/^\[\[q:([\w]+)\]\]$/))) { const q = quoteBox(m[1]); if (q) bin.appendChild(q); return; }
     if (b.startsWith('!! ')) { bin.appendChild(tipBox(b.slice(3))); return; }
     if (b.startsWith('## ')) { bin.appendChild(h('h3', null, b.slice(3))); return; }
     if (/^- /.test(b)) { bin.appendChild(h('ul', null, b.split('\n').map(x => h('li', { html: md(x.replace(/^- /, '')) })))); return; }
     bin.appendChild(h('p', { html: md(b).replace(/\n/g, '<br>') }));
   });
-  if (l.quote && !/\[\[q:/.test(T.body || '')) bin.appendChild(quoteBox(l.quote));
   main.appendChild(body);
   // quiz
   if (T.quiz) main.appendChild(quizBox(l, T.quiz));
@@ -631,23 +625,16 @@ function pageTips(main) {
   });
 }
 
-// ---------------------------------------------------------------- BOOK
-function pageBook(main) {
-  const B = TX().book || FB().book || {};
+// ---------------------------------------------------------------- RESOURCES
+function pageRes(main) {
   main.appendChild(h('section', { class: 'panel p-ink' }, h('div', { class: 'in' },
-    sheetHead({ left: t('reference_book'), mid: 'ISBN 978-0-262-04970-2', right: 'MIT PRESS · 2025', num: '📖', title: 'The SuperCollider Book', h1: true }),
-    h('p', { style: 'margin:0 0 6px;font:600 15px/1.4 var(--mono)' }, 'Scott Wilson, David Cottle, Nick Collins (eds.) · foreword by James McCartney · second edition'),
-    h('p', { class: 'note', style: 'color:#C9C7C0;font-size:14px', html: md(B.about || '') }),
-    h('div', { class: 'row mt' }, h('a', { class: 'btn mag', href: BUY, target: '_blank', rel: 'noopener' }, t('buy_book') + ' ↗'), h('a', { class: 'btn', href: PUBLISHER, target: '_blank', rel: 'noopener', style: '--pb:#000;--pf:#ECEBE6' }, 'MIT Press ↗'), h('a', { class: 'btn', href: BOOKCODE, target: '_blank', rel: 'noopener', style: '--pb:#000;--pf:#ECEBE6' }, t('book_code') + ' ↗')))));
-  main.appendChild(h('section', { class: 'panel p-yel mt' }, h('div', { class: 'in disc' }, h('h4', { style: 'margin:0 0 8px;font:700 20px/1 var(--disp);text-transform:uppercase' }, '⚖ ' + t('disclaimer')), ...(B.disclaimer || []).map(p => h('p', { style: 'margin:0 0 10px', html: md(p) })))));
-  main.appendChild(h('section', { class: 'panel p-paper mt' }, h('div', { class: 'in prose' }, h('h3', { style: 'margin-top:0' }, t('how_used')), ...(B.how || []).map(p => h('p', { html: md(p) })))));
-  main.appendChild(h('div', { class: 'lbl mt' }, t('quotes_used')));
-  Object.keys(C.quotes).forEach(k => main.appendChild(quoteBox(k)));
-  main.appendChild(h('div', { class: 'lbl mt' }, t('chapter_map')));
-  main.appendChild(h('div', { class: 'chmap' }, C.chapters.map(([n, title, who]) => {
-    const ls = LESSONS.filter(l => l.ch.includes(n));
-    return h('div', null, h('span', { class: 'meta' }, h('span', null, t('chapter') + ' ' + n), h('span', null, ls.length ? ls.length + ' ' + t('lessons') : '—')), h('b', { lang: 'en' }, title), h('span', { style: 'color:var(--paperMute)' }, who), ls.length ? h('div', { class: 'row', style: 'margin-top:6px' }, ls.map(l => h('a', { class: 'btn sm', href: '#/l/' + l.id }, pad2(l.n)))) : null);
-  })));
+    sheetHead({ left: t('nav_res'), mid: 'OPEN SOURCE · GPL', right: RESOURCES.length + ' LINKS', num: '↗', title: t('res_title'), h1: true }),
+    h('p', { class: 'note', style: 'color:#C9C7C0;font-size:14px', html: md(t('res_intro')) }))));
+  main.appendChild(h('div', { class: 'grid2 mt' }, RESOURCES.map(([k, url, col], i) =>
+    h('a', { class: 'panel p-paper res', href: url, target: '_blank', rel: 'noopener', style: 'text-decoration:none;color:inherit' }, h('div', { class: 'in' },
+      h('div', { class: 'meta' }, h('span', null, pad2(i + 1)), h('span', null, url.replace(/^https:\/\//, '').split('/')[0])),
+      h('div', { class: 'shm' }, h('div', { class: 'sq' }, h('i', { class: col[0] })), h('h3', { style: 'margin:0;font:700 22px/1.05 var(--disp);text-transform:uppercase' }, t('res_' + k) + ' ↗')),
+      h('p', { class: 'note', style: 'margin:6px 0 0' }, t('res_' + k + '_d')))))));
 }
 
 // ---------------------------------------------------------------- footer & settings
@@ -656,7 +643,7 @@ function footer() {
     h('div', { class: 'hz', style: '--pf:var(--paperFg);margin-bottom:12px' }),
     h('p', { html: md(t('footer_1')) }),
     h('p', { html: md(t('footer_disc')) }),
-    h('p', null, h('a', { href: REPO, target: '_blank', rel: 'noopener' }, 'GitHub'), ' · ', h('a', { href: IG, target: '_blank', rel: 'noopener' }, 'Instagram @buenos.aires.front'), ' · ', h('a', { href: '#/book' }, t('disclaimer')), ' · v' + VERSION));
+    h('p', null, h('a', { href: REPO, target: '_blank', rel: 'noopener' }, 'GitHub'), ' · ', h('a', { href: IG, target: '_blank', rel: 'noopener' }, 'Instagram @buenos.aires.front'), ' · ', h('a', { href: '#/res' }, t('nav_res')), ' · v' + VERSION));
 }
 function settings() {
   const m = h('div', { class: 'modal', role: 'dialog', 'aria-modal': 'true' });
