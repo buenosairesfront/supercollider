@@ -175,8 +175,8 @@ function shellHTML() {
   return `
 <div class="shell">
   <header class="top"><div class="bar">
-    <a class="brand" href="#/" aria-label="SuperCollider Lab">
-      <svg class="logo" viewBox="0 0 84 44" aria-hidden="true"><rect x="1" y="1" width="82" height="42" fill="var(--paper)" stroke="var(--paperFg)" stroke-width="2"/><text x="42" y="27" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="800" font-size="22" fill="var(--paperFg)">SC·LAB</text><rect x="6" y="33" width="7" height="6" fill="#D12F7D"/><rect x="15" y="33" width="7" height="6" fill="#2A9EBF"/><rect x="24" y="33" width="7" height="6" fill="#E1C43B"/><text x="78" y="39" text-anchor="end" font-family="Noto Sans JP, sans-serif" font-weight="900" font-size="7" fill="var(--paperFg)">コライダー</text></svg>
+    <a class="brand" href="#/" aria-label="U-MA · SuperCollider Lab">
+      <svg class="logo" viewBox="0 0 200 120" role="img" aria-label="U-MA サウンド"><path d="M14 2H192a6 6 0 0 1 6 6V104L184 118H8a6 6 0 0 1-6-6V14Z" fill="#161616"/><path d="M7 15L17 7V94L7 104Z" fill="#C9C8C3"/><rect x="21" y="7" width="172" height="73" rx="2" fill="#ECEBE6"/><text x="107" y="73" text-anchor="middle" textLength="150" lengthAdjust="spacingAndGlyphs" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="800" font-size="78" fill="#161616" stroke="#161616" stroke-width="2" stroke-linejoin="round">U-MA</text><rect x="21" y="84" width="18" height="15" fill="#D12F7D"/><rect x="41" y="84" width="18" height="15" fill="#2A9EBF"/><rect x="61" y="84" width="18" height="15" fill="#E1C43B"/><rect x="82" y="84" width="111" height="15" fill="#ECEBE6"/><text x="137.5" y="96" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-weight="900" font-size="12" fill="#161616">サウンド</text><path d="M9 104H189L182 113H9Z" fill="#C9C8C3"/></svg>
     </a>
     <a class="brand" href="#/"><b>SuperCollider Lab</b><small id="sub">U-MA · Buenos Aires Front</small></a>
     <nav class="nav" id="nav" aria-label="main"></nav>
