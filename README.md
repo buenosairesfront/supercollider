@@ -1,6 +1,6 @@
 # SuperCollider Lab · U-MA コライダー
 
-Aprendé **SuperCollider** en el navegador: 30 lecciones, 10 laboratorios, código libre, referencia y consejos, con un motor de síntesis en tiempo real. Escribís código de SuperCollider, lo ejecutás con **Ctrl + Enter** y lo ves sonar: osciloscopio, espectro, sonograma, grafo de UGens en vivo, árbol de nodos y línea de tiempo de eventos. No hay que instalar ni cargar nada.
+Un acercamiento a **SuperCollider**, el lenguaje de programación para síntesis de audio y composición algorítmica, con la flexibilidad para investigar y explorar ideas: 30 lecciones, 10 laboratorios, código libre, referencia y consejos, con un motor de síntesis en tiempo real. Escribís código de SuperCollider, lo ejecutás con **Ctrl + Enter** y lo ves sonar: osciloscopio, espectro, sonograma, grafo de UGens en vivo, árbol de nodos y línea de tiempo de eventos. No hace falta instalar nada, y todo lo que hacés se puede descargar y guardar.
 
 **▶ Abrir la app:** https://buenosairesfront.github.io/supercollider/
 
