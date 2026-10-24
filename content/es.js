@@ -5,9 +5,9 @@ const R = String.raw;
 ui: {
   nav_res: 'Recursos', res_title: 'Recursos', res_intro: 'Para seguir aprendiendo con el SuperCollider de escritorio: el sitio oficial, la documentación, el foro y el código fuente. Todo libre y gratuito.', res_site: 'Sitio oficial y descargas', res_site_d: 'SuperCollider para Windows, macOS y Linux, gratis y de código abierto.', res_docs: 'Documentación oficial', res_docs_d: 'La ayuda de todas las clases y UGens, la misma que trae el IDE.', res_tut: 'Tutorial oficial', res_tut_d: '«Getting Started With SuperCollider», el recorrido de iniciación de la documentación.', res_forum: 'Foro de la comunidad', res_forum_d: 'scsynth.org: preguntas, proyectos y novedades.', res_sccode: 'sccode.org', res_sccode_d: 'Código compartido por la comunidad para estudiar y tocar.', res_src: 'Código fuente', res_src_d: 'El repositorio de SuperCollider en GitHub.',
   nav_home: 'Inicio', nav_course: 'Curso', nav_labs: 'Laboratorio', nav_free: 'Código libre', nav_ref: 'Referencia', nav_tips: 'Consejos', 
-  tagline: 'Aprendé SuperCollider en el navegador · U-MA',
-  hero_1: 'SuperCollider', hero_2: 'en el navegador',
-  hero_lead: 'Un curso completo de síntesis y programación musical con un motor de audio en tiempo real. Escribís código de SuperCollider, lo ejecutás y lo ves sonar: osciloscopio, espectro, grafo de UGens y línea de tiempo. Sin instalar nada.',
+  tagline: 'Aprendé SuperCollider · U-MA',
+  hero_1: 'SuperCollider', hero_2: '',
+  hero_lead: 'Un acercamiento al lenguaje de programación para síntesis de audio y composición algorítmica, con la flexibilidad para investigar y explorar ideas. Tiene un curso de siete módulos con ejemplos, quizzes y desafíos, un laboratorio, un espacio de código libre, referencia, consejos y recursos. Escribís código de SuperCollider, lo ejecutás y lo ves sonar en el osciloscopio, el espectro, el grafo de UGens y la línea de tiempo; en el laboratorio movés los controles y el código se escribe solo. Así, lo que escuchás y lo que ves van siempre juntos. No hace falta instalar nada, y todo lo que hacés se puede descargar y guardar.',
   start: 'Empezar', continue: 'Seguir', level: 'Nivel', lessons: 'lecciones', streak: 'Racha', days: 'días', modules: 'módulos', module: 'Módulo',
   try_now: 'Probalo ahora', try_title: 'Tu primer sonido', try_note: 'Hacé clic en ▶ o poné el cursor en el código y apretá Ctrl + Enter (Cmd + Enter en Mac). Para cortar: Ctrl + . o el botón STOP.',
   course_map: 'Mapa del curso', tip_day: 'Consejo del día', all_tips: 'Todos los consejos', 

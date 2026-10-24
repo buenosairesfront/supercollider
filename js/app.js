@@ -306,7 +306,7 @@ function pageHome(main) {
   const next = P.last ? lessonById(P.last) : LESSONS.find(l => !(P.lessons[l.id] && P.lessons[l.id].done)) || LESSONS[0];
   const hero = h('section', { class: 'panel p-paper hero' }, h('div', { class: 'in' },
     h('div', { class: 'meta' }, h('span', null, 'SC-LAB / REV ' + VERSION), h('span', null, 'ID SCL-0001'), h('span', null, '6 LANG · WEB AUDIO')),
-    h('h1', { html: esc(t('hero_1')) + '<br><em>' + esc(t('hero_2')) + '</em>' }),
+    h('h1', { html: esc(t('hero_1')) + (t('hero_2') ? '<br><em>' + esc(t('hero_2')) + '</em>' : '') }),
     h('p', { class: 'lead' }, t('hero_lead')),
     h('div', { class: 'row' },
       h('a', { class: 'btn lg mag', href: '#/l/' + next.id }, (P.last ? t('continue') : t('start')) + ' → ' + pad2(next.n) + ' ' + ((tx('les', next.id) || {}).t || '')),
